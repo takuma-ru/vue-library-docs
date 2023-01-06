@@ -165,11 +165,12 @@ const {
   z-index: 9999;
   position: absolute;
   height: 100%;
-  width: 100vw;
+  width: calc(100vw - 200px - 5rem);
 
   left: calc(200px + 5rem);
 
   background-color: transparent;
+  overflow: hidden;
 }
 
 .transition-nav {
