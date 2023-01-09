@@ -67,7 +67,15 @@ const backgroundColor = computed(() => {
 
 /* -- function -- */
 const click = () => {
-  props.to ? navigateTo(props.to, { external: true }) : emit('click')
+  if (props.to) {
+    if (props.to.includes('https://') || props.to.includes('http://')) {
+      window.open(props.to, '_blank')
+    } else {
+      navigateTo(props.to, { external: true })
+    }
+  } else {
+    emit('click')
+  }
 }
 
 /* -- watch -- */

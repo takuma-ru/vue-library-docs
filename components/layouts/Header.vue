@@ -24,7 +24,7 @@
     <div class="buttons">
       <BaseButton
         is-icon
-        to="https://github.com/takuma-ru"
+        :to="appConfigStore.appConfig.repository"
       >
         <Github />
       </BaseButton>
