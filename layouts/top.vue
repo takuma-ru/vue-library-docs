@@ -32,6 +32,7 @@
 
 <script lang="ts" setup>
 const colorStore = useColorStore()
+const colorModeStore = useColorModeStore()
 const displayStatusStore = useDisplayStatusStore()
 const appConfigStore = useAppConfigStore()
 </script>

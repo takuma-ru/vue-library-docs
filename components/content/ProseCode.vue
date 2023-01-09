@@ -42,7 +42,7 @@ interface IProps {
 }
 
 /* -- props, emit -- */
-const props =  withDefaults(defineProps<IProps>(), {
+withDefaults(defineProps<IProps>(), {
   code: '',
   language: undefined,
   filename:  undefined,

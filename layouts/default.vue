@@ -4,11 +4,11 @@
     <main>
       <NavigationBar />
       <div class="page">
-        <ContentDoc
+        <!-- <ContentDoc
           v-if="VueVersion"
           :path="`/md${VueVersion}`"
-        />
-        <ContentDoc v-else>
+        /> -->
+        <ContentDoc>
           <template #not-found>
             <div
               :style="{
@@ -35,9 +35,9 @@ const displayStatusStore = useDisplayStatusStore()
 
 /* -- variable(ref, reactive, computed) -- */
 const route = useRoute()
-const VueVersion = computed(() => {
+/* const VueVersion = computed(() => {
   return route.fullPath.includes('/get-started') && route.fullPath.substring(12)
-})
+}) */
 
 /* -- function -- */
 
@@ -60,6 +60,10 @@ const VueVersion = computed(() => {
     grid-template-columns: auto 1fr;
 
     .page {
+      grid-column: 2;
+
+      box-sizing: border-box;
+      width: 100%;
       padding: 2rem v-bind("displayStatusStore.displaySizeMixin({ sm: '1rem', lp: '1rem', pc: '2rem' })");
 
       overflow-y: auto;

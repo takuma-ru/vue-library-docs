@@ -106,7 +106,7 @@ hr {
   bottom: 0px;
   margin: 1rem 0px;
 
-  background-color: v-bind("colorStore.color.theme.subText");
+  background-color: v-bind("colorModeStore.colorMode === 'dark' ? colorStore.color.black.lighten[1] : colorStore.color.black.lighten[2]");
   border: none;
 }
 </style>

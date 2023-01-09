@@ -18,7 +18,7 @@
       >
         <BaseButton
           is-icon
-          icon="arrow_back_ios_new"
+          icon="navigate_before"
         />
       </div>
       <div
