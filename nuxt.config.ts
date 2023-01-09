@@ -1,3 +1,4 @@
+import * as path from 'path'
 import eslintPlugin from 'vite-plugin-eslint';
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
@@ -67,6 +68,13 @@ export default defineNuxtConfig({
   ],
 
   content: {
+    sources: {
+      md: {
+        prefix: '/md',
+        driver: 'fs',
+        base: path.resolve(__dirname, 'markdowns')
+      }
+    },
     highlight: {
       theme: 'dark-plus',
       preload: ['html', 'css', 'ts', 'js', 'vue','r', 'cmd']

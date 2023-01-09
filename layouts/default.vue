@@ -4,7 +4,11 @@
     <main>
       <NavigationBar />
       <div class="page">
-        <ContentDoc>
+        <ContentDoc
+          v-if="VueVersion"
+          :path="`/md${VueVersion}`"
+        />
+        <ContentDoc v-else>
           <template #not-found>
             <div
               :style="{
@@ -21,8 +25,25 @@
 </template>
 
 <script lang="ts" setup>
+/* -- type, interface -- */
+
+/* -- store -- */
 const colorStore = useColorStore()
 const displayStatusStore = useDisplayStatusStore()
+
+/* -- props, emit -- */
+
+/* -- variable(ref, reactive, computed) -- */
+const route = useRoute()
+const VueVersion = computed(() => {
+  return route.fullPath.includes('/get-started') && route.fullPath.substring(12)
+})
+
+/* -- function -- */
+
+/* -- watch -- */
+
+/* -- life cycle -- */
 </script>
 
 <style lang="scss">

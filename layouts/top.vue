@@ -1,14 +1,17 @@
 <template>
   <main id="index">
-    <h1 class="title lib">
-      vue-swipe-modal
-    </h1>
-    <h1 class="title feature">
-      Modal window that can be swiped to close
-    </h1>
-    <h1 class="title name">
-      takuma-ru
-    </h1>
+    <h1
+      class="title lib"
+      v-text="appConfigStore.appConfig.libName"
+    />
+    <h1
+      class="title feature"
+      v-text="appConfigStore.appConfig.description"
+    />
+    <h1
+      class="title name"
+      v-text="appConfigStore.appConfig.developerName"
+    />
     <div class="buttons">
       <BaseButton
         icon="start"
@@ -19,9 +22,9 @@
       <BaseButton
         outlined
         icon="open_in_new"
-        to="https://github.com/takuma-ru"
+        :to="appConfigStore.appConfig.repository"
       >
-        View on GitHub
+        View Repository
       </BaseButton>
     </div>
   </main>
@@ -30,6 +33,7 @@
 <script lang="ts" setup>
 const colorStore = useColorStore()
 const displayStatusStore = useDisplayStatusStore()
+const appConfigStore = useAppConfigStore()
 </script>
 
 <style lang="scss" scoped>
