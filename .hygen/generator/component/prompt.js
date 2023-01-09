@@ -8,7 +8,7 @@ module.exports = {
         type: 'select',
         name: 'atomic',
         message: 'Please select directory',
-        choices: [ 'layouts', 'utils', 'enter by yourself'  ]
+        choices: [ 'layouts', 'utils', 'content', 'enter by yourself'  ]
       },
       {
         type: 'input',
