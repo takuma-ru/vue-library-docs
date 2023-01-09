@@ -17,9 +17,8 @@
         <div
           v-if="displayStatusStore.displaySize !== 'sm'"
           class="text"
-        >
-          lib-name
-        </div>
+          v-text="appConfigStore.appConfig.libName"
+        />
       </div>
     </div>
     <div class="buttons">
@@ -45,8 +44,8 @@
 
 /* -- store -- */
 const colorModeStore = useColorModeStore()
-
 const colorStore = useColorStore()
+const appConfigStore = useAppConfigStore()
 
 /* -- variable(ref, reactive, computed) -- */
 const displayStatusStore = useDisplayStatusStore()

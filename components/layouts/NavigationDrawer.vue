@@ -18,9 +18,8 @@
       >
         <BaseButton
           is-icon
-          icon="chevron_left"
+          icon="arrow_back_ios_new"
         />
-        <span>close</span>
       </div>
       <div
         v-for="sectionData in pathList"
@@ -151,7 +150,7 @@ const {
         display: inline-block;
 
         position: relative;
-        margin: 0 0 0.5rem 0;
+        margin: 0 0 1rem 0;
 
         text-decoration: none;
         cursor: pointer;

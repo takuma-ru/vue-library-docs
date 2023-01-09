@@ -20,7 +20,7 @@
           v-for="path in sectionData.paths"
           :key="path.name"
           :style="{
-            color: isCurrentPath(path.path) ? colorModeStore.colorMode !== 'dark' ? colorStore.color.green.default : colorStore.color.green.darken[1] : colorStore.color.theme.subText,
+            color: isCurrentPath(path.path) ? colorModeStore.colorMode === 'dark' ? colorStore.color.green.default : colorStore.color.green.darken[1] : colorStore.color.theme.subText,
             fontWeight: isCurrentPath(path.path) ? 'bold' : 'normal',
           }"
           @click="navigateTo(path.path)"
@@ -102,7 +102,7 @@ const {
         display: inline-block;
 
         position: relative;
-        margin: 0 0 0.5rem 0;
+        margin: 0 0 0.75rem 0;
 
         text-decoration: none;
         cursor: pointer;
