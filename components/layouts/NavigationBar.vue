@@ -10,6 +10,7 @@
     >
       <Icon
         :icon="sectionData.icon"
+        size="1rem"
         class="section-icon"
       />
       <p class="sction-title">
@@ -18,14 +19,14 @@
       <div class="paths">
         <a
           v-for="path in sectionData.paths"
-          :key="path.name"
+          :key="path._id"
           :style="{
-            color: isCurrentPath(path.path) ? colorModeStore.colorMode === 'dark' ? colorStore.color.green.default : colorStore.color.green.darken[2] : colorStore.color.theme.subText,
-            fontWeight: isCurrentPath(path.path) ? 'bold' : 'normal',
+            color: isCurrentPath(path._path) ? colorModeStore.colorMode === 'dark' ? colorStore.color.green.default : colorStore.color.green.darken[2] : colorStore.color.theme.subText,
+            fontWeight: isCurrentPath(path._path) ? 'bold' : 'normal',
           }"
-          @click="navigateTo(path.path)"
+          @click="navigateTo(path._path)"
         >
-          {{ path.name }}
+          {{ toKebabCase(path.title) }}
         </a>
       </div>
     </div>
@@ -48,7 +49,7 @@ const displayStatusStore = useDisplayStatusStore()
 const {
   pathList,
   isCurrentPath
-} = usePath()
+} = await usePath()
 
 /* -- function -- */
 
@@ -70,6 +71,7 @@ const {
 
   .section {
     display: grid;
+    align-items: center;
     grid-template-columns: auto 1fr;
     grid-template-rows: auto 1fr;
 
@@ -79,7 +81,7 @@ const {
       grid-column: 1;
       grid-row: 1;
 
-      margin-right: 0.5rem;
+      margin: 0 0.5rem 0.5rem 0;
     }
 
     .sction-title {

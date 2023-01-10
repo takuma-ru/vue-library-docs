@@ -24,7 +24,7 @@ const {
 
 const {
   isCurrentPath
-} = usePath()
+} = await usePath()
 
 /* -- props, emit -- */
 
