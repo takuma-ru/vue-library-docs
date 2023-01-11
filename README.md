@@ -1,6 +1,6 @@
 # @takuma-ru/vue-library-docs
 
-![socialPreview](https://user-images.githubusercontent.com/49429291/211703637-3daca7d9-6ea0-4e50-893c-e1bbec8abc1c.png)
+![socialPreview](https://user-images.githubusercontent.com/49429291/211705077-a56dfeae-a862-4371-8e03-798719930fa3.png)
 
 ## Status
 none
