@@ -1,42 +1,37 @@
-# Nuxt 3 Minimal Starter
+# @takuma-ru/vue-library-docs
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+![socialPreview](https://user-images.githubusercontent.com/49429291/211703637-3daca7d9-6ea0-4e50-893c-e1bbec8abc1c.png)
 
-## Setup
+## Status
+none
+<!-- ![npm](https://img.shields.io/npm/dt/@takuma-ru/vue-swipe-modal?style=flat-square)
+![npm bundle size (scoped)](https://img.shields.io/bundlephobia/min/@takuma-ru/vue-swipe-modal?style=flat-square) -->
 
-Make sure to install the dependencies:
+## Description
+Documentation template for vue library (for nuxt3)
 
-```bash
-# yarn
-yarn install
+## DEMO
+none
+<!-- [demo-link](https://vue-swipe-modal-vue2.vercel.app) -->
 
-# npm
-npm install
-
-# pnpm
-pnpm install --shamefully-hoist
+## Getting Started
+### 0. Create nuxt-app
+```powershell
+npx nuxi@latest init [ directoryName ]
 ```
 
-## Development Server
-
-Start the development server on http://localhost:3000
-
-```bash
-npm run dev
+### 1. Install
+```powershell
+yarn add @takuma-ru/vue-library-docs
 ```
 
-## Production
+### 2. How to use
 
-Build the application for production:
-
-```bash
-npm run build
+```ts
+defineNuxtConfig({
+  extends: '@takuma-ru/vue-library-docs'
+})
 ```
 
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## License
+[MIT - Copyright (c) 2023 takuma-ru](https://github.com/takuma-ru/vue-library-docs/blob/main/LICENSE)
