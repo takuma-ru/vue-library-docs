@@ -1,6 +1,6 @@
 # @takuma-ru/vue-library-docs
 
-![socialPreview](https://user-images.githubusercontent.com/49429291/211705077-a56dfeae-a862-4371-8e03-798719930fa3.png)
+![socialPreview](https://user-images.githubusercontent.com/49429291/211722291-66181efa-55f0-4b79-8ccf-8c45e38e7041.png)
 
 ## Status
 ![npm](https://img.shields.io/npm/dt/@takuma-ru/vue-library-docs?style=flat-square)
