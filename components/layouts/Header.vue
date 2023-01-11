@@ -11,7 +11,7 @@
         @click="moveToIndex"
       >
         <img
-          src="https://nuxtjs.org/design-kit/colored-logo.svg"
+          :src="appConfigStore.appConfig.icon"
           alt="logo"
         >
         <div
@@ -88,9 +88,9 @@ const moveToIndex = () => {
     }
 
     .text {
-      margin-left: 1em;
+      margin-left: 0.75rem;
 
-      font-size: 1.5em;
+      font-size: 1.5rem;
       font-weight: 500;
     }
   }
