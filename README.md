@@ -17,7 +17,7 @@ none
 ## Getting Started
 ### 0. Create nuxt-app
 ```powershell
-npx nuxi@latest init [ directoryName ]
+  npx nuxi@latest init [ directoryName ]
 ```
 
 ### 1. Install

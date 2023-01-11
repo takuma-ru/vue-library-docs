@@ -26,7 +26,7 @@
           }"
           @click="navigateTo(path._path)"
         >
-          {{ toKebabCase(path.title) }}
+          {{ toSentence(path.title) }}
         </a>
       </div>
     </div>

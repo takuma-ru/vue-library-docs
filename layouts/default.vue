@@ -30,11 +30,11 @@
 /* -- store -- */
 const colorStore = useColorStore()
 const displayStatusStore = useDisplayStatusStore()
+const appConfigStore = useAppConfigStore()
 
 /* -- props, emit -- */
 
 /* -- variable(ref, reactive, computed) -- */
-const route = useRoute()
 /* const VueVersion = computed(() => {
   return route.fullPath.includes('/get-started') && route.fullPath.substring(12)
 }) */
@@ -44,6 +44,9 @@ const route = useRoute()
 /* -- watch -- */
 
 /* -- life cycle -- */
+useHead({
+  titleTemplate: `%s｜${appConfigStore.appConfig.libName}`
+})
 </script>
 
 <style lang="scss">

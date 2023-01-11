@@ -42,8 +42,8 @@
   ],
   "scripts": {
     "build": "nuxt build .",
-    "dev:playground": "nuxi prepare .playground && nuxt dev .playground/",
-    "dev:docs": "nuxi prepare .docs && nuxt dev .docs/",
+    "dev:playground": "yarn prepare && nuxt dev .playground/",
+    "dev:docs": "yarn prepare && nuxt dev .docs/",
     "generate:docs": "nuxt generate .docs/",
     "preview:docs": "nuxt preview .docs/",
     "prepare": "nuxi prepare && nuxi prepare .docs && nuxi prepare .playground",
@@ -56,14 +56,11 @@
     "release": "release-it"
   },
   "devDependencies": {
-    "@nuxt/content": "^2.3.0",
     "@nuxt/module-builder": "^0.2.1",
     "@nuxt/schema": "^3.0.0",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@typescript-eslint/eslint-plugin": "^5.48.0",
     "@typescript-eslint/parser": "^5.48.0",
-    "@vueuse/core": "^9.10.0",
-    "@vueuse/nuxt": "^9.10.0",
     "eslint": "^8.31.0",
     "eslint-plugin-nuxt": "^4.0.0",
     "eslint-plugin-vue": "^9.8.0",
@@ -72,8 +69,11 @@
     "sass": "^1.57.1"
   },
   "dependencies": {
+    "@nuxt/content": "^2.3.0",
     "@nuxt/kit": "^3.0.0",
     "@pinia/nuxt": "^0.4.6",
+    "@vueuse/core": "^9.10.0",
+    "@vueuse/nuxt": "^9.10.0",
     "pinia": "^2.0.28",
     "vite-plugin-eslint": "^1.8.1"
   }

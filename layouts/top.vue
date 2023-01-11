@@ -35,6 +35,10 @@ const colorStore = useColorStore()
 const colorModeStore = useColorModeStore()
 const displayStatusStore = useDisplayStatusStore()
 const appConfigStore = useAppConfigStore()
+
+useHead({
+  title: `${appConfigStore.appConfig.libName}`
+})
 </script>
 
 <style lang="scss" scoped>

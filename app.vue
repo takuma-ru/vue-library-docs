@@ -15,6 +15,7 @@ const nuxtApp = useNuxtApp()
 /* -- store -- */
 const colorModeStore = useColorModeStore()
 const colorStore = useColorStore()
+const appConfigStore = useAppConfigStore()
 
 /* -- variable(ref, reactive, computed) -- */
 const route = useRoute()
@@ -40,6 +41,12 @@ nuxtApp.hook('page:start', () => {
 nuxtApp.hook('page:finish', () => {
   loading.value.finish()
   window.scrollTo(0, 0)
+})
+
+useHead({
+  link: [
+    {rel: 'icon', href: appConfigStore.appConfig.icon}
+  ]
 })
 </script>
 
