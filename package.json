@@ -37,6 +37,7 @@
     "layouts",
     "plugins",
     "types",
+    "utils",
     "app.vue",
     "nuxt.config.ts"
   ],
