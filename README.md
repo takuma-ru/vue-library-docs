@@ -8,7 +8,7 @@
 ![npm bundle size](https://img.shields.io/bundlephobia/min/@takuma-ru/vue-library-docs?style=flat-square)
 
 ## Description
-Documentation template for vue library (for nuxt3)
+Documentation library for vue library
 
 ## DEMO
 none
