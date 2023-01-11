@@ -117,7 +117,7 @@ const {
           bottom: -4px;
           left: 0;
 
-          background: v-bind("colorStore.color.green.default");
+          background-color: #5ccb96;
           border-radius: 1px;
           transform: scale(0, 1);
           transform-origin: left top;

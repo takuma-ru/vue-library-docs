@@ -45,9 +45,6 @@ export const usePath = async () => {
       }
     }
 
-
-    console.log(pathList)
-
     return pathList
   })
 
