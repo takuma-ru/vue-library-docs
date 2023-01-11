@@ -1,5 +1,4 @@
 import * as path from 'path'
-import eslintPlugin from 'vite-plugin-eslint';
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
@@ -79,11 +78,5 @@ export default defineNuxtConfig({
       theme: 'dark-plus',
       preload: ['html', 'css', 'ts', 'js', 'vue','r', 'cmd']
     }
-  },
-
-  vite: {
-    plugins: [
-      eslintPlugin()
-    ]
-  },
+  }
 })
