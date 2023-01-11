@@ -65,8 +65,7 @@
     "eslint-plugin-nuxt": "^4.0.0",
     "eslint-plugin-vue": "^9.8.0",
     "nuxt": "3.0.0",
-    "release-it": "^15.6.0",
-    "sass": "^1.57.1"
+    "release-it": "^15.6.0"
   },
   "dependencies": {
     "@nuxt/content": "^2.3.0",
@@ -74,6 +73,7 @@
     "@pinia/nuxt": "^0.4.6",
     "@vueuse/core": "^9.10.0",
     "@vueuse/nuxt": "^9.10.0",
-    "pinia": "^2.0.28"
+    "pinia": "^2.0.28",
+    "sass": "^1.57.1"
   }
 }
