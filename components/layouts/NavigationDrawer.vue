@@ -1,6 +1,6 @@
 <template>
   <div
-    v-if="isOpenDrawer && displayStatusStore.displaySize === 'sm' && !isCurrentPath('/')"
+    v-if="isOpenDrawer && displayStatusStore.displaySize === 'sm' && !navigationStore.isCurrentPath('/')"
     class="background"
     @click="updateIsOpenDrawer(false)"
   />
@@ -9,7 +9,7 @@
     appear
   >
     <div
-      v-if="isOpenDrawer && displayStatusStore.displaySize === 'sm' && !isCurrentPath('/')"
+      v-if="isOpenDrawer && displayStatusStore.displaySize === 'sm' && !navigationStore.isCurrentPath('/')"
       id="navigationDrawer"
     >
       <div
@@ -22,7 +22,7 @@
         />
       </div>
       <div
-        v-for="sectionData in pathList"
+        v-for="sectionData in navigationStore.navigationList"
         :key="sectionData.title"
         class="section"
       >
@@ -39,8 +39,8 @@
             v-for="path in sectionData.paths"
             :key="path._path"
             :style="{
-              color: isCurrentPath(path._path) ? colorModeStore.colorMode === 'dark' ? colorStore.color.green.default : colorStore.color.green.darken[1] : colorStore.color.theme.subText,
-              fontWeight: isCurrentPath(path._path) ? 'bold' : 'normal',
+              color: navigationStore.isCurrentPath(path._path) ? colorModeStore.colorMode === 'dark' ? colorStore.color.green.default : colorStore.color.green.darken[1] : colorStore.color.theme.subText,
+              fontWeight: navigationStore.isCurrentPath(path._path) ? 'bold' : 'normal',
             }"
             @click="navigateTo(path._path)"
           >
@@ -61,11 +61,9 @@ const {
 } = useNavigationControlStore()
 
 const displayStatusStore = useDisplayStatusStore()
-
 const colorModeStore = useColorModeStore()
-
 const colorStore = useColorStore()
-
+const navigationStore = useNavigationStore()
 const {
   updateIsOpenDrawer
 } = useNavigationControlStore()
@@ -73,10 +71,6 @@ const {
 /* -- props, emit -- */
 
 /* -- variable(ref, reactive, computed) -- */
-const {
-  pathList,
-  isCurrentPath
-} = await usePath()
 
 /* -- function -- */
 

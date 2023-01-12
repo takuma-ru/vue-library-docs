@@ -4,7 +4,7 @@
     id="navigationBar"
   >
     <div
-      v-for="sectionData in pathList"
+      v-for="sectionData in navigationStore.navigationList"
       :key="sectionData.title"
       class="section"
     >
@@ -21,8 +21,8 @@
           v-for="path in sectionData.paths"
           :key="path._id"
           :style="{
-            color: isCurrentPath(path._path) ? colorModeStore.colorMode === 'dark' ? colorStore.color.green.default : colorStore.color.green.darken[2] : colorStore.color.theme.subText,
-            fontWeight: isCurrentPath(path._path) ? 'bold' : 'normal',
+            color: navigationStore.isCurrentPath(path._path) ? colorModeStore.colorMode === 'dark' ? colorStore.color.green.default : colorStore.color.green.darken[2] : colorStore.color.theme.subText,
+            fontWeight: navigationStore.isCurrentPath(path._path) ? 'bold' : 'normal',
           }"
           @click="navigateTo(path._path)"
         >
@@ -38,18 +38,13 @@
 
 /* -- store -- */
 const colorModeStore = useColorModeStore()
-
 const colorStore = useColorStore()
-
 const displayStatusStore = useDisplayStatusStore()
+const navigationStore = useNavigationStore()
 
 /* -- props, emit -- */
 
 /* -- variable(ref, reactive, computed) -- */
-const {
-  pathList,
-  isCurrentPath
-} = await usePath()
 
 /* -- function -- */
 

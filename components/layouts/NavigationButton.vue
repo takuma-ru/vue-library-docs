@@ -1,6 +1,6 @@
 <template>
   <div
-    v-if="displayStatusStore.displaySize === 'sm' && !isCurrentPath('/')"
+    v-if="displayStatusStore.displaySize === 'sm' && !navigationStore.isCurrentPath('/')"
     id="navigationButton"
   >
     <BaseButton
@@ -16,15 +16,12 @@
 
 /* -- store -- */
 const displayStatusStore = useDisplayStatusStore()
+const navigationStore = useNavigationStore()
 
 const {
   isOpenDrawer,
   switchIsOpenDrawer
 } = useNavigationControlStore()
-
-const {
-  isCurrentPath
-} = await usePath()
 
 /* -- props, emit -- */
 
