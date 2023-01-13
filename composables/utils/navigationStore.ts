@@ -4,7 +4,7 @@ import { IconNameType } from "~~/types/icon/iconName"
 interface IPath {
   title: string
   icon: IconNameType
-  paths?: Array<NavItem>
+  children?: Array<NavItem>
 }
 
 export const useNavigationStore = defineStore('navigation', () => {
@@ -17,7 +17,44 @@ export const useNavigationStore = defineStore('navigation', () => {
     const getStartedIndex = navigation.value?.findIndex(path => path._path.includes('/get-started'))
     const componentsIndex = navigation.value?.findIndex(path => path._path.includes('/components'))
 
+    console.log(navigation.value)
+
     if (navigation.value) {
+      navigation.value.map((navigationItem) => {
+        switch (navigationItem._path) {
+          case '/components':
+            pathList.unshift({
+              title: 'Components',
+              icon: 'category',
+              children: navigationItem.children
+            })
+            break;
+          case '/get-started':
+            pathList.unshift({
+              title: 'Get Started',
+              icon: 'start',
+              children: navigationItem.children
+            })
+            break;
+          case '/introduction':
+            pathList.unshift({
+              title: 'Introduction',
+              icon: 'info',
+              children: navigationItem.children
+            })
+            break;
+          default:
+            pathList.push({
+              title: navigationItem.title,
+              icon: 'adjust',
+              children: navigationItem.children
+            })
+            break;
+        }
+      })
+    }
+
+    /* if (navigation.value) {
       if (introductionIndex !== undefined && introductionIndex > -1) {
         pathList.push({
           title: 'Introduction',
@@ -41,7 +78,7 @@ export const useNavigationStore = defineStore('navigation', () => {
           paths: navigation.value[componentsIndex].children
         })
       }
-    }
+    } */
 
     return pathList
   })
@@ -50,7 +87,7 @@ export const useNavigationStore = defineStore('navigation', () => {
   const isCurrentPath = (path: string): boolean => {
     const route = useRoute()
 
-    return route.fullPath === path
+    return route.path === path
   }
 
   /* -- mutation -- */

@@ -36,8 +36,12 @@ const props = withDefaults(defineProps<IProps>(), {
 
 <style lang="scss" scoped>
 #getStartedPage {
+  display: flex;
+  flex-flow: column;
+
   .title {
-    font-size: 1.5em;
+    font-size: 2rem;
+    margin-bottom: 0.5em;
     font-weight: 700;
   }
 }

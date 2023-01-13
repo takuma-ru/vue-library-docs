@@ -18,7 +18,7 @@
       </p>
       <div class="paths">
         <a
-          v-for="path in sectionData.paths"
+          v-for="path in sectionData.children"
           :key="path._id"
           :style="{
             color: navigationStore.isCurrentPath(path._path) ? colorModeStore.colorMode === 'dark' ? colorStore.color.green.default : colorStore.color.green.darken[2] : colorStore.color.theme.subText,

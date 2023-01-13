@@ -82,7 +82,7 @@ onMounted(() => {
   font-size: 12px;
   font-weight: 500;
   border-radius: 0.5em 0.5em 0em 0em;
-  background-color: v-bind('colorStore.color.black.darken[2]');
+  background-color: v-bind('colorStore.color.black.darken[3]');
 
   .directory {
     display: flex;

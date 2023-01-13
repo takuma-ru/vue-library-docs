@@ -1,4 +1,6 @@
-export default defineAppConfig({
+import { IAppConfig } from "./types/app.config";
+
+export default defineAppConfig<IAppConfig>({
   docs: {
     libName: 'lib-name',
     developerName: 'developer-name',
