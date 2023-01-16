@@ -8,5 +8,8 @@ export default defineNuxtConfig({
   ],
   nuxtLibraryDocs: {
     addPlugin: true
-  }
+  },
+  nitro: {
+    preset: "vercel",
+  },
 })
