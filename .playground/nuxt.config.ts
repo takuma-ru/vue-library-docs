@@ -10,6 +10,9 @@ export default defineNuxtConfig({
     addPlugin: true
   }, */
   nitro: {
-    preset: 'node-server',
+    /* preset: 'vercel', */
+    output: {
+      dir: '../../dist'
+    }
   },
 })
