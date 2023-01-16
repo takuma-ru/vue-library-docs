@@ -10,7 +10,7 @@ export default defineNuxtConfig({
     addPlugin: true
   }, */
   nitro: {
-    preset: 'vercel',
+    preset: 'vercel-edge',
     output: {
       dir: 'dist'
     }
