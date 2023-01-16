@@ -10,6 +10,6 @@ export default defineNuxtConfig({
     addPlugin: true
   },
   nitro: {
-    preset: 'vercel-edge',
+    preset: 'vercel',
   },
 })
