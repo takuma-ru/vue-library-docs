@@ -13,11 +13,6 @@ export const useNavigationStore = defineStore('navigation', () => {
   /* -- state -- */
   const navigationList = computed(() => {
     const pathList: Array<IPath> = []
-    const introductionIndex = navigation.value?.findIndex(path => path._path.includes('/introduction'))
-    const getStartedIndex = navigation.value?.findIndex(path => path._path.includes('/get-started'))
-    const componentsIndex = navigation.value?.findIndex(path => path._path.includes('/components'))
-
-    console.log(navigation.value)
 
     if (navigation.value) {
       navigation.value.map((navigationItem) => {

@@ -8,7 +8,7 @@
 /* -- type, interface -- */
 
 /* -- store -- */
-const colorModeStore = useColorModeStore()
+const colorMode = useColorMode()
 const colorStore = useColorStore()
 
 /* -- props, emit -- */
@@ -24,6 +24,6 @@ const colorStore = useColorStore()
 
 <style lang="scss" scoped>
 thead {
-  border-bottom: solid 1px v-bind("colorModeStore.colorMode === 'dark' ? colorStore.color.black.lighten[1] : colorStore.color.black.lighten[2]");
+  border-bottom: solid 1px v-bind("colorMode.preference === 'dark' ? colorStore.color.black.lighten[1] : colorStore.color.black.lighten[2]");
 }
 </style>

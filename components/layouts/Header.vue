@@ -29,9 +29,9 @@
         <Github />
       </BaseButton>
       <BaseButton
-        :icon="colorModeStore.colorMode === 'dark' ? 'dark_mode': 'light_mode'"
+        :icon="colorModeIcon"
         is-icon
-        @click="colorModeStore.switchMode()"
+        @click="switchMode()"
       />
     </div>
   </header>
@@ -43,16 +43,42 @@
 /* -- props, emit -- */
 
 /* -- store -- */
-const colorModeStore = useColorModeStore()
+const colorMode = useColorMode()
 const colorStore = useColorStore()
 const appConfigStore = useAppConfigStore()
+const displayStatusStore = useDisplayStatusStore()
 
 /* -- variable(ref, reactive, computed) -- */
-const displayStatusStore = useDisplayStatusStore()
+const colorModeIcon = computed(() => {
+  switch (colorMode.preference) {
+    case 'dark':
+      return 'dark_mode'
+    case 'light':
+    return 'light_mode'
+    case 'system':
+    return 'desktop_windows'
+  }
+})
 
 /* -- function -- */
 const moveToIndex = () => {
   navigateTo('/')
+}
+
+const switchMode = () => {
+  switch (colorMode.preference) {
+    case 'dark':
+      colorMode.preference = 'light'
+      colorStore.setLightTheme()
+      break;
+      case 'light':
+      colorMode.preference = 'dark'
+      colorStore.setDarkTheme()
+      break;
+    case 'system':
+      colorMode.preference = 'dark'
+      break;
+  }
 }
 /* -- watch -- */
 /* -- life cycle -- */
@@ -68,7 +94,7 @@ const moveToIndex = () => {
   height: 64px;
   padding: 1rem;
   margin: auto;
-  border-bottom: solid 1px v-bind("colorModeStore.colorMode === 'dark' ? colorStore.color.black.lighten[1] : colorStore.color.black.lighten[2]");
+  border-bottom: solid 1px v-bind("colorMode.preference === 'dark-mode' ? colorStore.color.black.lighten[1] : colorStore.color.black.lighten[2]");
   box-sizing: border-box;
 
   .right-contents {

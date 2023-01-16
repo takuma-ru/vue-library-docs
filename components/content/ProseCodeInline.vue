@@ -6,7 +6,7 @@
 /* -- type, interface -- */
 
 /* -- store -- */
-const colorModeStore = useColorModeStore()
+const colorMode = useColorMode()
 const colorStore = useColorStore()
 
 /* -- props, emit -- */
@@ -26,6 +26,6 @@ code {
   font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
   font-size: 0.9rem;
   border-radius: 0.25rem;
-  background-color: v-bind("colorModeStore.colorMode === 'dark' ? colorStore.color.black.darken[2] : colorStore.color.black.lighten[3]");
+  background-color: v-bind("colorMode.preference === 'dark' ? colorStore.color.black.darken[2] : colorStore.color.black.lighten[3]");
 }
 </style>

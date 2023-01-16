@@ -12,11 +12,24 @@
           <template #not-found>
             <div
               :style="{
-                backgroundColor: colorStore.color.theme.background,
                 width: '100%',
                 height: '100%'
               }"
-            />
+            >
+              <h1>
+                404&#xFF5C;🚨This Page is Not Found.
+              </h1>
+              <hr>
+              <p :style="{ marginBottom: '3rem' }">
+                Sorry, the page you were looking for was not available...
+              </p>
+              <BaseButton
+                icon="undo"
+                to="/"
+              >
+                Back to Top Page
+              </BaseButton>
+            </div>
           </template>
         </ContentDoc>
       </div>
@@ -54,7 +67,7 @@ useHead({
   display: grid;
   grid-template-columns: 1fr auto 1fr;
 
-  background-color: v-bind("colorStore.color.theme.background");
+  // background-color: v-bind("colorStore.color.theme.background");
 
   main {
     grid-column: 2;

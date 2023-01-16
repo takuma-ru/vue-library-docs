@@ -21,7 +21,7 @@
           v-for="path in sectionData.children"
           :key="path._id"
           :style="{
-            color: navigationStore.isCurrentPath(path._path) ? colorModeStore.colorMode === 'dark' ? colorStore.color.green.default : colorStore.color.green.darken[2] : colorStore.color.theme.subText,
+            color: navigationStore.isCurrentPath(path._path) ? colorMode.preference === 'dark' ? colorStore.color.green.default : colorStore.color.green.darken[2] : colorStore.color.theme.subText,
             fontWeight: navigationStore.isCurrentPath(path._path) ? 'bold' : 'normal',
           }"
           @click="navigateTo(path._path)"
@@ -37,7 +37,7 @@
 /* -- type, interface -- */
 
 /* -- store -- */
-const colorModeStore = useColorModeStore()
+const colorMode = useColorMode()
 const colorStore = useColorStore()
 const displayStatusStore = useDisplayStatusStore()
 const navigationStore = useNavigationStore()

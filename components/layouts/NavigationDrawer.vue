@@ -39,7 +39,7 @@
             v-for="path in sectionData.children"
             :key="path._path"
             :style="{
-              color: navigationStore.isCurrentPath(path._path) ? colorModeStore.colorMode === 'dark' ? colorStore.color.green.default : colorStore.color.green.darken[1] : colorStore.color.theme.subText,
+              color: navigationStore.isCurrentPath(path._path) ? colorMode.preference === 'dark' ? colorStore.color.green.default : colorStore.color.green.darken[1] : colorStore.color.theme.subText,
               fontWeight: navigationStore.isCurrentPath(path._path) ? 'bold' : 'normal',
             }"
             @click="navigateTo(path._path)"
@@ -59,9 +59,8 @@
 const {
   isOpenDrawer
 } = useNavigationControlStore()
-
+const colorMode = useColorMode()
 const displayStatusStore = useDisplayStatusStore()
-const colorModeStore = useColorModeStore()
 const colorStore = useColorStore()
 const navigationStore = useNavigationStore()
 const {

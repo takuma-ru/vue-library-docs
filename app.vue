@@ -13,7 +13,7 @@ const nuxtApp = useNuxtApp()
 /* -- type, interface -- */
 
 /* -- store -- */
-const colorModeStore = useColorModeStore()
+const colorMode = useColorMode()
 const colorStore = useColorStore()
 const appConfigStore = useAppConfigStore()
 
@@ -29,11 +29,23 @@ const layoutName = computed(() => {
 })
 
 /* -- function -- */
+const setColorTheme = () => {
+  switch (colorMode.value) {
+    case 'dark':
+      colorStore.setDarkTheme()
+      break;
+    case 'light':
+      colorStore.setLightTheme()
+      break;
+  }
+}
 
 /* -- watch -- */
+watch(colorMode, () => {
+  setColorTheme()
+})
 
 /* -- life cycle -- */
-
 nuxtApp.hook('page:start', () => {
   loading.value.start()
 })
@@ -42,6 +54,8 @@ nuxtApp.hook('page:finish', () => {
   loading.value.finish()
   window.scrollTo(0, 0)
 })
+
+setColorTheme()
 
 useHead({
   link: [
@@ -58,16 +72,24 @@ html, body {
   font-family: 'Noto Sans JP', sans-serif;
   overflow: hidden;
 
-  .dark {
-    background-color: #171717;
+  &.dark-mode {
+    background-color: #080808;
+    color: #E2E7EC;
 
-    .contents {
-      background-color: #171717;
+    #app {
+      background-color: #080808;
+      color: #E2E7EC;
     }
   }
 
-  .light {
-    background-color: #F2F2F2;
+  &.light-mode {
+    background-color: #f6f8fa;
+    color: #030300;
+
+    #app {
+      background-color: #f6f8fa;
+      color: #030300;
+    }
   }
 
   ::-webkit-scrollbar {
@@ -83,7 +105,7 @@ html, body {
   ::-webkit-scrollbar-thumb {
     border: 4.5px solid transparent;
     border-radius: 8px;
-    background-color: v-bind("colorModeStore.colorMode === 'dark' ? colorStore.color.black.lighten[1] : colorStore.color.black.lighten[2]");
+    background-color: v-bind("colorMode.preference === 'dark' ? colorStore.color.black.lighten[1] : colorStore.color.black.lighten[2]");
     background-clip: content-box;
   }
 }
@@ -113,7 +135,7 @@ hr {
   bottom: 0px;
   margin: 1rem 0px;
 
-  background-color: v-bind("colorModeStore.colorMode === 'dark' ? colorStore.color.black.lighten[1] : colorStore.color.black.lighten[2]");
+  background-color: v-bind("colorMode.preference === 'dark' ? colorStore.color.black.lighten[1] : colorStore.color.black.lighten[2]");
   border: none;
 }
 </style>

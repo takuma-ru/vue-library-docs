@@ -2,7 +2,7 @@ import * as path from 'path'
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-  ssr: false,
+  /* ssr: false, */
 
   app: {
     head: {
@@ -56,6 +56,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/content',
     '@vueuse/nuxt',
+    '@nuxtjs/color-mode',
     [
       '@pinia/nuxt',
       {
