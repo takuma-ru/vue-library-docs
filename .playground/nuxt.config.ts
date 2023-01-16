@@ -1,14 +1,14 @@
 import { defineNuxtConfig } from 'nuxt/config'
-import nuxtLibraryDocs from '../modules/module'
+/* import nuxtLibraryDocs from '../modules/module' */
 
 export default defineNuxtConfig({
   extends: '../',
-  modules: [
+  /* modules: [
     nuxtLibraryDocs
   ],
   nuxtLibraryDocs: {
     addPlugin: true
-  },
+  }, */
   nitro: {
     preset: 'vercel',
   },
