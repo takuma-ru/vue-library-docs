@@ -42,7 +42,7 @@
     "nuxt.config.ts"
   ],
   "scripts": {
-    "build": "nuxt build .",
+    "build": "nuxt build .docs/",
     "dev:playground": "yarn prepare && nuxt dev .playground/",
     "build:playground": "nuxt build .playground/",
     "generate:playground": "nuxt generate .playground/",

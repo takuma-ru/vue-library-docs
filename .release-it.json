@@ -6,7 +6,6 @@
     "commitMessage": "[chore(release)] release v${version}"
   },
   "github": {
-    "release": true,
-    "releaseName": "v${version}"
+    "release": true
   }
 }
