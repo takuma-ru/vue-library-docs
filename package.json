@@ -62,7 +62,6 @@
   "devDependencies": {
     "@nuxt/module-builder": "^0.2.1",
     "@nuxt/schema": "^3.0.0",
-    "@nuxtjs/color-mode": "^3.2.0",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@typescript-eslint/eslint-plugin": "^5.48.0",
     "@typescript-eslint/parser": "^5.48.0",
@@ -73,6 +72,7 @@
     "release-it": "^15.6.0"
   },
   "dependencies": {
+    "@nuxtjs/color-mode": "^3.2.0",
     "@nuxt/content": "^2.3.0",
     "@nuxt/kit": "^3.0.0",
     "@pinia/nuxt": "^0.4.6",
