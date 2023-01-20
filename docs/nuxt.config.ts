@@ -1,3 +1,3 @@
 export default defineNuxtConfig({
-  extends: '../packages'
+  extends: '@takuma-ru/vue-library-docs'
 })
