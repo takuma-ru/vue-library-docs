@@ -66,7 +66,7 @@ useHead({
 
 <style lang="scss">
 html, body {
-  height: 100vh;
+  height: 100svh;
   margin: 0px;
 
   font-family: 'Noto Sans JP', sans-serif;
@@ -105,24 +105,16 @@ html, body {
   ::-webkit-scrollbar-thumb {
     border: 4.5px solid transparent;
     border-radius: 8px;
-    background-color: v-bind("colorMode.preference === 'dark' ? colorStore.color.black.lighten[1] : colorStore.color.black.lighten[2]");
+    background-color: v-bind("colorMode.value === 'dark' ? colorStore.color.black.lighten[1] : colorStore.color.black.lighten[2]");
     background-clip: content-box;
   }
 }
 
 #app {
-  height: 100vh;
+  height: calc(100svh);
 
   background-color: v-bind("colorStore.color.theme.background");
   color: v-bind("colorStore.color.theme.text");
-}
-
-main {
-  position: relative;
-  width: min(calc(100vw), 1024px);
-  height: calc(100vh - 64px);
-
-  margin: auto;
 }
 
 .sub-text {
@@ -135,7 +127,7 @@ hr {
   bottom: 0px;
   margin: 1rem 0px;
 
-  background-color: v-bind("colorMode.preference === 'dark' ? colorStore.color.black.lighten[1] : colorStore.color.black.lighten[2]");
+  background-color: v-bind("colorMode.value === 'dark' ? colorStore.color.black.lighten[1] : colorStore.color.black.lighten[2]");
   border: none;
 }
 </style>

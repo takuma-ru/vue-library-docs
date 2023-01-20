@@ -38,10 +38,7 @@
           <a
             v-for="path in sectionData.children"
             :key="path._path"
-            :style="{
-              color: navigationStore.isCurrentPath(path._path) ? colorMode.preference === 'dark' ? colorStore.color.green.default : colorStore.color.green.darken[1] : colorStore.color.theme.subText,
-              fontWeight: navigationStore.isCurrentPath(path._path) ? 'bold' : 'normal',
-            }"
+            :class="navigationStore.isCurrentPath(path._path) ? 'selected' : 'unselect'"
             @click="navigateTo(path._path)"
           >
             {{ toSentence(path.title) }}
@@ -72,6 +69,9 @@ const {
 /* -- variable(ref, reactive, computed) -- */
 
 /* -- function -- */
+const textColor = (path: string) => {
+  return navigationStore.isCurrentPath(path) ? colorMode.value === 'dark' ? colorStore.color.green.default : colorStore.color.black.default : colorStore.color.theme.subText
+}
 
 /* -- watch -- */
 
@@ -145,10 +145,39 @@ const {
         display: inline-block;
 
         position: relative;
-        margin: 0 0 1rem 0;
+        margin: 0 0 0.75rem 0;
 
         text-decoration: none;
         cursor: pointer;
+
+        &.selected {
+          color: v-bind("colorStore.color.theme.text");
+          font-weight: 900;
+
+          &::after {
+            transform: scale(1, 1) translateY(-50%);
+          }
+        }
+
+        &.unselect {
+          color: v-bind("colorStore.color.theme.subText");
+          font-weight: 400;
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          width: 3px;
+          height: 80%;
+          left: -0.75rem;
+          top: 50%;
+
+          background-color: v-bind("colorStore.color.theme.text");
+          border-radius: 1px;
+          transform: scale(1, 0) translateY(-50%);
+          transform-origin: right center;
+          transition: transform .3s;
+        }
       }
     }
   }

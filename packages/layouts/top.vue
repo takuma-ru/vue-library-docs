@@ -44,7 +44,11 @@ useHead({
 #index {
   display: flex;
   flex-flow: column;
-  height: 100%;
+
+  position: relative;
+  width: min(100vw, 1024px);
+  height: calc(100svh - 64px);
+  margin: auto;
 
   padding: 2rem v-bind("displayStatusStore.displaySizeMixin({ sm: '1rem', lp: '1rem', pc: '2rem' })");
   box-sizing: border-box;

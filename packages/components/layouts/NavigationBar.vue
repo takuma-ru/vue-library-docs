@@ -1,6 +1,6 @@
 <template>
   <div
-    v-if="displayStatusStore.displaySize === 'lp' || displayStatusStore.displaySize === 'pc'"
+    v-show="displayStatusStore.displaySize === 'lp' || displayStatusStore.displaySize === 'pc'"
     id="navigationBar"
   >
     <div
@@ -20,10 +20,7 @@
         <a
           v-for="path in sectionData.children"
           :key="path._id"
-          :style="{
-            color: navigationStore.isCurrentPath(path._path) ? colorMode.preference === 'dark' ? colorStore.color.green.default : colorStore.color.green.darken[2] : colorStore.color.theme.subText,
-            fontWeight: navigationStore.isCurrentPath(path._path) ? 'bold' : 'normal',
-          }"
+          :class="navigationStore.isCurrentPath(path._path) ? 'selected' : 'unselect'"
           @click="navigateTo(path._path)"
         >
           {{ toSentence(path.title) }}
@@ -58,9 +55,9 @@ const navigationStore = useNavigationStore()
   justify-self: end;
 
   width: 200px;
-  height: calc(100% - 3rem);
-  margin: 2rem 1rem 2rem 1rem;
+  padding: 2rem 1rem 2rem 1rem;
 
+  box-sizing: border-box;
   -webkit-tap-highlight-color:rgba(0,0,0,0);
   overflow-y: auto;
 
@@ -104,23 +101,37 @@ const navigationStore = useNavigationStore()
         text-decoration: none;
         cursor: pointer;
 
+        &.selected {
+          color: v-bind("colorStore.color.theme.text");
+          font-weight: 900;
+
+          &::after {
+            transform: scale(1, 1) translateY(-50%);
+          }
+        }
+
+        &.unselect {
+          color: v-bind("colorStore.color.theme.subText");
+          font-weight: 400;
+        }
+
         &::after {
           content: '';
           position: absolute;
-          width: 100%;
-          height: 2px;
-          bottom: -4px;
-          left: 0;
+          width: 3px;
+          height: 80%;
+          left: -0.75rem;
+          top: 50%;
 
-          background-color: #5ccb96;
+          background-color: v-bind("colorStore.color.theme.text");
           border-radius: 1px;
-          transform: scale(0, 1);
-          transform-origin: left top;
+          transform: scale(1, 0) translateY(-50%);
+          transform-origin: right center;
           transition: transform .3s;
         }
 
         &:hover::after {
-          transform: scale(1, 1);
+          transform: scale(1, 1) translateY(-50%);
         }
       }
     }

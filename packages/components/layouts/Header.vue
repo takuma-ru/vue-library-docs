@@ -1,11 +1,7 @@
 <template>
   <header id="app-header">
     <div class="right-contents">
-      <NavigationButton
-        :style="{
-          marginRight: '0.5rem'
-        }"
-      />
+      <NavigationButton />
       <div
         class="title"
         @click="moveToIndex"
@@ -14,8 +10,8 @@
           :src="appConfigStore.appConfig.icon"
           alt="logo"
         >
-        <div
-          v-if="displayStatusStore.displaySize !== 'sm'"
+        <span
+          v-show="displayStatusStore.displaySize !== 'sm'"
           class="text"
           v-text="appConfigStore.appConfig.libName"
         />
@@ -24,6 +20,7 @@
     <div class="buttons">
       <BaseButton
         is-icon
+        size="small"
         :to="appConfigStore.appConfig.repository"
       >
         <Github />
@@ -31,6 +28,7 @@
       <BaseButton
         :icon="colorModeIcon"
         is-icon
+        size="small"
         @click="switchMode()"
       />
     </div>
@@ -94,7 +92,7 @@ const switchMode = () => {
   height: 64px;
   padding: 1rem;
   margin: auto;
-  border-bottom: solid 1px v-bind("colorMode.preference === 'dark-mode' ? colorStore.color.black.lighten[1] : colorStore.color.black.lighten[2]");
+  border-bottom: solid 1px v-bind("colorMode.value === 'dark' ? colorStore.color.black.lighten[1] : colorStore.color.black.lighten[2]");
   box-sizing: border-box;
 
   .right-contents {

@@ -3,11 +3,7 @@
     <NavigationDrawer />
     <main>
       <NavigationBar />
-      <div class="page">
-        <!-- <ContentDoc
-          v-if="VueVersion"
-          :path="`/md${VueVersion}`"
-        /> -->
+      <div id="page">
         <ContentDoc>
           <template #not-found>
             <div
@@ -75,7 +71,19 @@ useHead({
     display: grid;
     grid-template-columns: auto 1fr;
 
-    .page {
+    position: relative;
+    width: min(100vw, 1024px);
+    height: calc(100svh - 64px);
+    margin: auto;
+
+    &::-webkit-scrollbar-thumb {
+      border: 4.5px solid transparent;
+      border-radius: 8px;
+      background-color: transparent;
+      background-clip: content-box;
+    }
+
+    #page {
       grid-column: 2;
 
       box-sizing: border-box;

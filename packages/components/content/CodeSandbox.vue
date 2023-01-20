@@ -1,7 +1,7 @@
 <template>
   <div id="codeSandbox">
     <iframe
-      :src="`https://codesandbox.io/embed/${projectId}?autoresize=1&fontsize=14&hidenavigation=1&theme=${colorMode.preference === 'dark' ? 'dark' : 'light'}&view=preview&hidedevtools=1&hidenavigation=0`"
+      :src="`https://codesandbox.io/embed/${projectId}?autoresize=1&fontsize=14&hidenavigation=1&theme=${colorMode.value === 'dark' ? 'dark' : 'light'}&view=preview&hidedevtools=1&hidenavigation=0`"
       style="border: 0; overflow: hidden;"
       title="Demo"
       allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"

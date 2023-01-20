@@ -1,6 +1,6 @@
 <template>
   <div
-    v-if="displayStatusStore.displaySize === 'sm' && !navigationStore.isCurrentPath('/')"
+    v-show="displayStatusStore.displaySize === 'sm' && !navigationStore.isCurrentPath('/')"
     id="navigationButton"
   >
     <BaseButton
@@ -37,6 +37,6 @@ const {
 
 <style lang="scss" scoped>
 #navigationButton {
-
+  margin-right: 0.5rem;
 }
 </style>
