@@ -7,3 +7,5 @@ node_modules
 .env
 dist
 .vercel
+
+package-lock.json
