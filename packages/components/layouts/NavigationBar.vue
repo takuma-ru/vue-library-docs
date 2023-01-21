@@ -52,6 +52,7 @@ const navigationStore = useNavigationStore()
 
 <style lang="scss" scoped>
 #navigationBar {
+  grid-column: 1;
   justify-self: end;
 
   width: 200px;

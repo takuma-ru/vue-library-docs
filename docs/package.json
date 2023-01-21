@@ -7,7 +7,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "prepare": "nuxi prepare"
   },
   "dependencies": {
     "@takuma-ru/vue-library-docs": "^1.1.1"

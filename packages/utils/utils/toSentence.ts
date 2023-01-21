@@ -9,11 +9,11 @@ export const toSentence = (str: string) => {
   if (typeof str !== 'string') return str
 
 	str = str.replace(/^ *?[A-Z]/, (allStr) => {
-    return allStr.toLowerCase()
+    return allStr.toUpperCase()
   })
 	str = str.replace(/_/g, ' ')
 	str = str.replace(/ *?[A-Z]/g, (allStr) => {
-    return ' ' + allStr.replace(/ /g, '').toLowerCase()
+    return ' ' + allStr.replace(/ /g, '').toUpperCase()
   })
 
 	return str;

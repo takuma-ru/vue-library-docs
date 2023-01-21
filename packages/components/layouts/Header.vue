@@ -11,7 +11,6 @@
           alt="logo"
         >
         <span
-          v-show="displayStatusStore.displaySize !== 'sm'"
           class="text"
           v-text="appConfigStore.appConfig.libName"
         />

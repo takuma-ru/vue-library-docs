@@ -48,33 +48,6 @@ export const useNavigationStore = defineStore('navigation', () => {
         }
       })
     }
-
-    /* if (navigation.value) {
-      if (introductionIndex !== undefined && introductionIndex > -1) {
-        pathList.push({
-          title: 'Introduction',
-          icon: 'info',
-          paths: navigation.value[introductionIndex].children
-        })
-      }
-
-      if (getStartedIndex !== undefined && getStartedIndex > -1) {
-        pathList.push({
-          title: 'Get Started',
-          icon: 'start',
-          paths: navigation.value[getStartedIndex].children
-        })
-      }
-
-      if (componentsIndex !== undefined && componentsIndex > -1) {
-        pathList.push({
-          title: 'Components',
-          icon: 'category',
-          paths: navigation.value[componentsIndex].children
-        })
-      }
-    } */
-
     return pathList
   })
 
@@ -85,6 +58,10 @@ export const useNavigationStore = defineStore('navigation', () => {
     return route.path === path
   }
 
+  const isGetStartedPage = (): boolean => {
+    return navigationList.value.findIndex(path => path.title === 'Get Started') > -1 ? true : false
+  }
+
   /* -- mutation -- */
 
   /* -- action -- */
@@ -93,6 +70,7 @@ export const useNavigationStore = defineStore('navigation', () => {
 
   return {
     navigationList: readonly(navigationList),
-    isCurrentPath
+    isCurrentPath,
+    isGetStartedPage
   }
 })

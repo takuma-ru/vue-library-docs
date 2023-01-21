@@ -12,10 +12,30 @@
       class="title name"
       v-text="appConfigStore.appConfig.developerName"
     />
+    <div class="title support">
+      <template
+        v-for="version in supportVersionList"
+        :key="version.version"
+      >
+        <div
+          class="chip"
+        >
+          <img
+            :src="version.imgSrc"
+            alt="brand logo"
+          >
+          <span
+            class="version-name"
+            v-text="version.version"
+          />
+        </div>
+      </template>
+    </div>
     <div class="buttons">
       <BaseButton
+        v-show="navigationStore.isGetStartedPage()"
         icon="start"
-        to="/get-started/vue2"
+        :to="navigationStore.navigationList.find(path => path.title === 'Get Started')?.children![0]._path"
       >
         Get Started
       </BaseButton>
@@ -34,6 +54,37 @@
 const colorStore = useColorStore()
 const displayStatusStore = useDisplayStatusStore()
 const appConfigStore = useAppConfigStore()
+const navigationStore =  useNavigationStore()
+
+const supportVersionList = computed(() => {
+  return [
+    {
+      version: 'Nuxt2',
+      isSupport: appConfigStore.appConfig.supportVersion.nuxt2,
+      imgSrc: 'https://nuxtjs.org/design-kit/colored-logo.svg'
+    },
+    {
+      version: 'Nuxt3',
+      isSupport: appConfigStore.appConfig.supportVersion.nuxt3,
+      imgSrc: 'https://nuxt.com/assets/design-kit/logo/icon-green.svg'
+    },
+    {
+      version: 'Vue2.6',
+      isSupport: appConfigStore.appConfig.supportVersion.vue2,
+      imgSrc: 'https://github.com/vuejs/art/blob/master/logo.png?raw=true'
+    },
+    {
+      version: 'Vue2.7',
+      isSupport: appConfigStore.appConfig.supportVersion.vue2Point7,
+      imgSrc: 'https://github.com/vuejs/art/blob/master/logo.png?raw=true'
+    },
+    {
+      version: 'Vue3.x',
+      isSupport: appConfigStore.appConfig.supportVersion.vue3,
+      imgSrc: 'https://github.com/vuejs/art/blob/master/logo.png?raw=true'
+    },
+  ]
+})
 
 useHead({
   title: `${appConfigStore.appConfig.libName}`
@@ -47,16 +98,17 @@ useHead({
 
   position: relative;
   width: min(100vw, 1024px);
-  height: calc(100svh - 64px);
+  max-height: calc(100svh - 64px);
   margin: auto;
 
+  overflow-y: auto;
   padding: 2rem v-bind("displayStatusStore.displaySizeMixin({ sm: '1rem', lp: '1rem', pc: '2rem' })");
   box-sizing: border-box;
 
   .title {
     position: relative;
 
-    margin: 36px 0px;
+    margin: 2rem 0px;
 
     &::after {
       position: absolute;
@@ -82,15 +134,45 @@ useHead({
     content: 'Made by';
   }
 
+  .support::after {
+    content: 'Supported versions';
+  }
+
+  .support {
+    display: flex;
+    align-items: center;
+    column-gap: 1.5rem;
+    row-gap: 0.25rem;
+    flex-wrap: wrap;
+
+    .chip {
+      display: flex;
+      align-items: center;
+      column-gap: 0.5rem;
+
+      width: fit-content;
+      padding: 0.5rem 0rem;
+
+      // background-color: v-bind("colorStore.color.theme.complementaryDarken[2]");
+      border-radius: 0.5rem;
+
+      img {
+        width: 24px;
+      }
+
+      .version-name{
+        font-weight: bold;
+      }
+    }
+  }
+
+
   .buttons {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-
-    #Button {
-      margin-right: 1rem;
-      margin-bottom: 1rem;
-    }
+    column-gap: 1rem;
+    row-gap: 1rem;
   }
 }
 </style>
