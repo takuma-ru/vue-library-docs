@@ -104,7 +104,7 @@ const navigationStore = useNavigationStore()
 
         &.selected {
           color: v-bind("colorStore.color.theme.text");
-          font-weight: 900;
+          font-weight: 500;
 
           &::after {
             transform: scale(1, 1) translateY(-50%);
@@ -113,7 +113,7 @@ const navigationStore = useNavigationStore()
 
         &.unselect {
           color: v-bind("colorStore.color.theme.subText");
-          font-weight: 400;
+          font-weight: 300;
         }
 
         &::after {

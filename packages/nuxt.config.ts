@@ -1,4 +1,8 @@
+import { createResolver, logger } from '@nuxt/kit'
 import * as path from 'path'
+
+const { resolve } = createResolver(import.meta.url)
+const vueLibraryDocs = resolve('./modules/module')
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
@@ -64,8 +68,13 @@ export default defineNuxtConfig({
           'defineStore'
         ]
       }
-    ]
+    ],
+    vueLibraryDocs
   ],
+
+  vueLibraryDocs: {
+    addPlugin: true
+  },
 
   content: {
     sources: {

@@ -1,14 +1,14 @@
 import { fileURLToPath } from 'url'
 import { defineNuxtModule, addPlugin, createResolver } from '@nuxt/kit'
 
-export interface ModuleOptions {
+interface ModuleOptions {
   addPlugin: boolean
 }
 
-export default defineNuxtModule<ModuleOptions>({
+const module = defineNuxtModule<ModuleOptions>({
   meta: {
-    name: 'nuxt-library-docs',
-    configKey: 'nuxtLibraryDocs',
+    name: 'vue-library-docs',
+    configKey: 'vueLibraryDocs',
     compatibility: {
       nuxt: '^3.0.0'
     }
@@ -22,6 +22,13 @@ export default defineNuxtModule<ModuleOptions>({
       const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
       nuxt.options.build.transpile.push(runtimeDir)
       addPlugin(resolve(runtimeDir, 'plugin'))
+    } else {
+      console.warn('\x1b[32m@takuma-ru/vue-library-docs\x1B[0m is not active')
     }
   }
 })
+
+export {
+  ModuleOptions,
+  module as default
+}
