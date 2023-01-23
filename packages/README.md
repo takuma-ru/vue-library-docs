@@ -29,7 +29,10 @@ yarn add @takuma-ru/vue-library-docs
 1. Add `@takuma-ru/vue-library-docs` to `extends` and use the template.
     ```ts
     defineNuxtConfig({
-      extends: '@takuma-ru/vue-library-docs'
+      extends: '@takuma-ru/vue-library-docs',
+      vueLibraryDocs: {
+        isUsePlugin: true // Flag whether to use `@takuma-ru/vue-library-docs` templates and components.
+      }
     })
     ```
 2. Delete `app.vue`.
@@ -37,7 +40,7 @@ yarn add @takuma-ru/vue-library-docs
     ```powershell
     touch app.config.ts
     ```
-    ```
+    ```powershell
     type nul > app.config.ts
     ```
 4. Edit `app.config.ts`.
