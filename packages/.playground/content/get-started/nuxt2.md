@@ -1,7 +1,7 @@
 ::get-started-page
 ---
 version: 'nuxt2'
-descriptions: 'With nuxt2.x, there are several settings that need to be made.'
+description: 'With nuxt2.x, there are several settings that need to be made.'
 ---
 ### 1. Install
 This library works with `@vue-composition-api`, so it should be installed together.

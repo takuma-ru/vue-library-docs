@@ -71,17 +71,17 @@ const supportVersionList = computed(() => {
     {
       version: 'Vue2.6',
       isSupport: appConfigStore.appConfig.supportVersion.vue2,
-      imgSrc: 'https://github.com/vuejs/art/blob/master/logo.png?raw=true'
+      imgSrc: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg'
     },
     {
       version: 'Vue2.7',
       isSupport: appConfigStore.appConfig.supportVersion.vue2Point7,
-      imgSrc: 'https://github.com/vuejs/art/blob/master/logo.png?raw=true'
+      imgSrc: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg'
     },
     {
       version: 'Vue3.x',
       isSupport: appConfigStore.appConfig.supportVersion.vue3,
-      imgSrc: 'https://github.com/vuejs/art/blob/master/logo.png?raw=true'
+      imgSrc: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg'
     },
   ]
 })

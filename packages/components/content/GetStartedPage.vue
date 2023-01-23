@@ -4,7 +4,7 @@
       Get Started for {{ version }}
     </span>
     <p class="sub-text">
-      {{ descriptions }}
+      {{ description }}
     </p>
     <hr>
     <slot />
@@ -15,7 +15,7 @@
 /* -- type, interface -- */
 export interface IProps {
   version: string
-  descriptions?: string
+  description?: string
 }
 
 /* -- store -- */

@@ -1,7 +1,7 @@
 ::get-started-page
 ---
 version: 'vue2'
-descriptions: 'In Vue 2.7 and Vue 3 series, you can easily implement it in the following way!'
+description: 'In Vue 2.7 and Vue 3 series, you can easily implement it in the following way!'
 ---
 
 ### 1. Install

@@ -1,21 +1,27 @@
 <template>
   <div class="content-page">
-    page
+    <span class="title">
+      {{ title }}
+    </span>
+    <p class="sub-text">
+      {{ description }}
+    </p>
+    <hr>
+    <slot />
   </div>
 </template>
 
 <script lang="ts" setup>
 /* -- type, interface -- */
-export interface IPageProps {
-  modelValue: any;
+export interface IProps {
+  title: string
+  description?: string
 }
 
 /* -- store -- */
 
 /* -- props, emit -- */
-const props = withDefaults(defineProps<IPageProps>(), {
-  modelValue: false
-})
+const props = withDefaults(defineProps<IProps>(), {})
 
 /* -- variable(ref, reactive, computed) -- */
 
@@ -28,6 +34,13 @@ const props = withDefaults(defineProps<IPageProps>(), {
 
 <style lang="scss" scoped>
 .content-page {
+  display: flex;
+  flex-flow: column;
 
+  .title {
+    font-size: 2rem;
+    margin-bottom: 0.5em;
+    font-weight: 700;
+  }
 }
 </style>
