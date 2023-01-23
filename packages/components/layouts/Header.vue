@@ -24,6 +24,13 @@
       >
         <Github />
       </BaseButton>
+      <!-- <BaseButton
+        is-icon
+        size="small"
+        :to="appConfigStore.appConfig.npm"
+      >
+        <Npm />
+      </BaseButton> -->
       <BaseButton
         :icon="colorModeIcon"
         is-icon

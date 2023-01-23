@@ -8,7 +8,7 @@ export default defineAppConfig<IAppConfig>({
     icon: 'https://user-images.githubusercontent.com/49429291/211703596-2abb6a11-259c-4b0a-8022-438e0ec735c2.png',
     image: ' https://user-images.githubusercontent.com/49429291/211703637-3daca7d9-6ea0-4e50-893c-e1bbec8abc1c.png',
     repository: 'https://github.com/takuma-ru/vue-library-docs',
-    npm: '',
+    npm: 'https://www.npmjs.com/package/@takuma-ru/vue-library-docs',
     supportVersion: {
       vue2: true,
       vue2Point7: true,

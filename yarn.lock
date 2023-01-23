@@ -860,7 +860,7 @@
     defer-to-connect "^2.0.1"
 
 "@takuma-ru/vue-library-docs@^1.2.2", "@takuma-ru/vue-library-docs@file:C:\\Users\\knk takuma\\dev_vue\\@takuma-ru\\nuxt-library-docs\\packages":
-  version "1.2.3"
+  version "1.2.4"
   resolved "file:packages"
   dependencies:
     "@nuxt/content" "^2.3.0"
@@ -2298,7 +2298,7 @@ dir-glob@^3.0.1:
   version "1.0.0"
   resolved "file:docs"
   dependencies:
-    "@takuma-ru/vue-library-docs" "^1.1.1"
+    "@takuma-ru/vue-library-docs" "^1.2.2"
 
 doctrine@^2.1.0:
   version "2.1.0"
