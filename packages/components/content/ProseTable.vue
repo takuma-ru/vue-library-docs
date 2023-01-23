@@ -1,5 +1,5 @@
 <template>
-  <div id="proseTable">
+  <div class="proseTable">
     <table>
       <slot />
     </table>
@@ -24,7 +24,7 @@
 </script>
 
 <style lang="scss" scoped>
-#proseTable {
+.proseTable {
   position: relative;
 
   overflow-y: auto;

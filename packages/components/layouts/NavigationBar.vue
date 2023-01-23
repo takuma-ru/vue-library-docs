@@ -1,7 +1,7 @@
 <template>
   <div
     v-show="displayStatusStore.displaySize === 'lp' || displayStatusStore.displaySize === 'pc'"
-    id="navigationBar"
+    class="navigationBar"
   >
     <div
       v-for="sectionData in navigationStore.navigationList"
@@ -51,7 +51,7 @@ const navigationStore = useNavigationStore()
 </script>
 
 <style lang="scss" scoped>
-#navigationBar {
+.navigationBar {
   grid-column: 1;
   justify-self: end;
 

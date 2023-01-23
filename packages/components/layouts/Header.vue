@@ -1,5 +1,5 @@
 <template>
-  <header id="app-header">
+  <header class="app-header">
     <div class="right-contents">
       <NavigationButton />
       <div
@@ -89,7 +89,7 @@ const switchMode = () => {
 </script>
 
 <style lang="scss" scoped>
-#app-header {
+.app-header {
   display: flex;
   align-items: center;
   justify-content: space-between;

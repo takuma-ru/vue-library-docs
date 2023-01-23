@@ -15,7 +15,7 @@
       @mouseenter="isShowCopyButton = true"
       @mouseleave="isShowCopyButton = false"
     >
-      <span :id="thisId">
+      <span :class="thisId">
         <slot />
       </span>
       <div

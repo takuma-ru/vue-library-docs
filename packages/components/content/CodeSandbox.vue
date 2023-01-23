@@ -1,5 +1,5 @@
 <template>
-  <div id="codeSandbox">
+  <div class="codeSandbox">
     <iframe
       :src="`https://codesandbox.io/embed/${projectId}?autoresize=1&fontsize=14&hidenavigation=1&theme=${colorMode.value === 'dark' ? 'dark' : 'light'}&view=preview&hidedevtools=1&hidenavigation=0`"
       style="border: 0; overflow: hidden;"
@@ -33,7 +33,7 @@ withDefaults(defineProps<ICodeSandboxProps>(), {
 </script>
 
 <style lang="scss" scoped>
-#codeSandbox {
+.codeSandbox {
   position: relative;
   height: 300px;
   width: 100%;

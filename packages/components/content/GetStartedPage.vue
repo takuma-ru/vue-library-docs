@@ -1,5 +1,5 @@
 <template>
-  <div id="getStartedPage">
+  <div class="getStartedPage">
     <span class="title">
       Get Started for {{ version }}
     </span>
@@ -35,7 +35,7 @@ const props = withDefaults(defineProps<IProps>(), {
 </script>
 
 <style lang="scss" scoped>
-#getStartedPage {
+.getStartedPage {
   display: flex;
   flex-flow: column;
 

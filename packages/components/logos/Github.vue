@@ -1,5 +1,5 @@
 <template>
-  <div id="github-logo">
+  <div class="github-logo">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 16 16"
@@ -17,7 +17,7 @@ const colorStore = useColorStore()
 </script>
 
 <style lang="scss">
-#github-logo {
+.github-logo {
   display: inline-flex;
   align-items: center;
   justify-content: center;

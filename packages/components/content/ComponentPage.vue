@@ -1,5 +1,5 @@
 <template>
-  <div id="componentPage">
+  <div class="componentPage">
     <span class="title">
       {{ componentName }}
     </span>
@@ -53,7 +53,7 @@ const props = withDefaults(defineProps<IComponentPageProps>(), {
 </script>
 
 <style lang="scss" scoped>
-#componentPage {
+.componentPage {
   margin-bottom: 3rem;
 
   .title {

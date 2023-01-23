@@ -1,6 +1,6 @@
 <template>
   <button
-    id="Button"
+    class="Button"
     :disabled="disabled"
     :size="!isIcon && size"
     :fab="fab"
@@ -84,7 +84,7 @@ const click = () => {
 </script>
 
 <style lang="scss" scoped>
-#Button {
+.Button {
   position: relative;
   width: auto;
   height: 100%;

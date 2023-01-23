@@ -1,7 +1,7 @@
 <template>
-  <div id="npm">
+  <div class="npm">
     <svg
-      id="n"
+      class="n"
       xmlns="http://www.w3.org/2000/svg"
       width="16"
       height="16"
@@ -34,7 +34,7 @@ const colorStore = useColorStore()
 </script>
 
 <style lang="scss" scoped>
-#npm {
+.npm {
   display: inline-flex;
   align-items: center;
   justify-content: center;

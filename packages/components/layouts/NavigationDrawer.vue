@@ -10,7 +10,7 @@
   >
     <div
       v-if="isOpenDrawer && displayStatusStore.displaySize === 'sm' && !navigationStore.isCurrentPath('/')"
-      id="navigationDrawer"
+      class="navigationDrawer"
     >
       <div
         class="close-button"
@@ -79,7 +79,7 @@ const textColor = (path: string) => {
 </script>
 
 <style lang="scss" scoped>
-#navigationDrawer {
+.navigationDrawer {
   justify-self: end;
 
   position: relative;
