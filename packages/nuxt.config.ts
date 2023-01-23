@@ -73,7 +73,7 @@ export default defineNuxtConfig({
   ],
 
   vueLibraryDocs: {
-    addPlugin: true
+    isUsePlugin: true
   },
 
   content: {

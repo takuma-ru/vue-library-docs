@@ -2,7 +2,11 @@ import { fileURLToPath } from 'url'
 import { defineNuxtModule, addPlugin, createResolver } from '@nuxt/kit'
 
 interface ModuleOptions {
-  addPlugin: boolean
+  /**
+   * Flag whether to use `@takuma-ru/vue-library-docs` templates and components.
+   * @default `true`
+   */
+  isUsePlugin: boolean
 }
 
 const module = defineNuxtModule<ModuleOptions>({
@@ -14,10 +18,10 @@ const module = defineNuxtModule<ModuleOptions>({
     }
   },
   defaults: {
-    addPlugin: true
+    isUsePlugin: true
   },
   setup (options, nuxt) {
-    if (options.addPlugin) {
+    if (options.isUsePlugin) {
       const { resolve } = createResolver(import.meta.url)
       const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
       nuxt.options.build.transpile.push(runtimeDir)

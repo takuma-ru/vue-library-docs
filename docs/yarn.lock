@@ -758,10 +758,10 @@
   resolved "https://registry.yarnpkg.com/@socket.io/component-emitter/-/component-emitter-3.1.0.tgz#96116f2a912e0c02817345b3c10751069920d553"
   integrity sha512-+9jVqKhRSpsc591z5vX+X5Yyw+he/HCB4iQ/RYxw35CEPaY1gnsNE43nf9n9AaYjAQrTiI/mOwKUKdUs9vf7Xg==
 
-"@takuma-ru/vue-library-docs@^1.1.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@takuma-ru/vue-library-docs/-/vue-library-docs-1.2.1.tgz#f4133c75ee3e696ff098c63305f91a0c08953423"
-  integrity sha512-jXiHPlFidZYA1j4hVcjCotXLyFjB0iSB0tc9++WztDmMaV9Eia9VovGxplAFRy6OMOpaoFji1jpYkWdNGYO+EA==
+"@takuma-ru/vue-library-docs@^1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@takuma-ru/vue-library-docs/-/vue-library-docs-1.2.2.tgz#e18431ab182af0604a3e34e49de7fb43058dc692"
+  integrity sha512-qC27/Hz12Fp/+8OzQZuERwgmHN69gbj58Q1rbxVGWJxphkHXQ9YPUMsDPpS5I7Vpm6Pm+91FPbJxUH1ebqD26A==
   dependencies:
     "@nuxt/content" "^2.3.0"
     "@nuxt/kit" "^3.0.0"
