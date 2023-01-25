@@ -1,6 +1,6 @@
 {
   "name": "vue-library-docs-workspaces",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "workspaces": [
     "packages/**",
@@ -9,7 +9,6 @@
   "scripts": {
     "lib": "yarn workspace @takuma-ru/vue-library-docs",
     "docs": "yarn workspace docs",
-
     "release": "npm run lib release",
     "release:patch": "npm run lib release:patch"
   },
