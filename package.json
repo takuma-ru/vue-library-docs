@@ -11,23 +11,5 @@
     "docs": "yarn workspace docs",
     "release": "npm run lib release",
     "release:patch": "npm run lib release:patch"
-  },
-  "release-it": {
-    "npm": {
-      "publish": true,
-      "skipChecks": true
-    },
-    "git": {
-      "requireCleanWorkingDir": false,
-      "commitMessage": "[chore(release)] release v${version}"
-    },
-    "github": {
-      "release": true
-    },
-    "plugins": {
-      "@release-it-plugins/workspaces": {
-        "workspaces": ["packages/*"]
-      }
-    }
   }
 }
