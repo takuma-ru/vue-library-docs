@@ -26,14 +26,14 @@ jobs:
         run: echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > .npmrc
       - name: Major release
         id: major
-        run: npx --package release-it@${RELEASE_IT_VERSION} --package @release-it-plugins/workspaces@{RELEASE_IT_WORKSPACES_VERSION} release-it major --ci
+        run: npx --package release-it@${RELEASE_IT_VERSION} --package @release-it-plugins/workspaces@${RELEASE_IT_WORKSPACES_VERSION} release-it major --ci
         if: contains(toJSON(github.event.commits.*.message), '🚀 bump up version major')
       - name: Minor release
         id: minor
-        run: npx --package release-it@${RELEASE_IT_VERSION} --package @release-it-plugins/workspaces@{RELEASE_IT_WORKSPACES_VERSION} release-it minor --ci
+        run: npx --package release-it@${RELEASE_IT_VERSION} --package @release-it-plugins/workspaces@${RELEASE_IT_WORKSPACES_VERSION} release-it minor --ci
         if: steps.major.conclusion == 'skipped' && contains(toJSON(github.event.commits.*.message), '🚀 bump up version minor')
       - name: Patch release
         # ポイント3
-        run: npx --package release-it@${RELEASE_IT_VERSION} --package @release-it-plugins/workspaces@{RELEASE_IT_WORKSPACES_VERSION} release-it patch --ci
+        run: npx --package release-it@${RELEASE_IT_VERSION} --package @release-it-plugins/workspaces@${RELEASE_IT_WORKSPACES_VERSION} release-it patch --ci
         # ポイント4
         if: "!(steps.major.conclusion == 'success' || steps.minor.conclusion == 'success')"
