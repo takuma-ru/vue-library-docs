@@ -33,6 +33,8 @@ jobs:
         # ポイント2
         run: echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > .npmrc
 
+      - run: yarn install --immutable --immutable-cache --check-cache
+
       - name: Major release
         id: major
         run: yarn release major --ci
