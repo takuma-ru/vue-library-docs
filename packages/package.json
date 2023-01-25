@@ -52,7 +52,8 @@
     "hygen:composable": "hygen generator composable",
     "hygen:page": "hygen generator page",
     "hygen:util": "hygen generator util",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "release": "release-it"
   },
   "devDependencies": {
     "@nuxt/module-builder": "^0.2.1",
