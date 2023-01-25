@@ -18,7 +18,7 @@ jobs:
       - uses: actions/setup-node@v2
       - name: Set releaser settings
         run: |
-          git config --global user.name github-action(@takuma-ru/vue-library-docs)
+          git config --global user.name github-action-takuma-ru-vue-library-docs
           git config --global user.email github-action@example.com
       - name: Set .npmrc
         # ポイント2
