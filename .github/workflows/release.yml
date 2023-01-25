@@ -35,16 +35,16 @@ jobs:
 
       - name: Major release
         id: major
-        run: yarn release major --ci
+        run: yarn lib release-it --npm.publishArgs='--registry=https://registry.npmjs.org/:_authToken=${NPM_TOKEN}' major --ci
         if: contains(toJSON(github.event.commits.*.message), '🚀 bump up version major')
 
       - name: Minor release
         id: minor
-        run: yarn release minor --ci
+        run: yarn lib release-it --npm.publishArgs='--registry=https://registry.npmjs.org/:_authToken=${NPM_TOKEN}' minor --ci
         if: steps.major.conclusion == 'skipped' && contains(toJSON(github.event.commits.*.message), '🚀 bump up version minor')
 
       - name: Patch release
         # ポイント3
-        run: yarn release patch --ci
+        run: yarn lib release-it --npm.publishArgs='--registry=https://registry.npmjs.org/:_authToken=${NPM_TOKEN}' patch --ci
         # ポイント4
         if: "!(steps.major.conclusion == 'success' || steps.minor.conclusion == 'success')"
