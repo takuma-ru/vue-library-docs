@@ -10,6 +10,7 @@
     "lib": "yarn workspace @takuma-ru/vue-library-docs",
     "docs": "yarn workspace docs",
 
-    "release": "npm run lib release"
+    "release": "npm run lib release",
+    "release:patch": "npm run lib release:patch"
   }
 }
