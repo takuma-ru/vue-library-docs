@@ -53,8 +53,7 @@
     "hygen:page": "hygen generator page",
     "hygen:util": "hygen generator util",
     "lint": "eslint .",
-    "release": "release-it --npm.publishArgs='--registry=https://registry.npmjs.org'",
-    "release:patch": "release-it --npm.publishArgs='--registry=https://registry.npmjs.org' -- patch --ci"
+    "release": "release-it"
   },
   "devDependencies": {
     "@nuxt/module-builder": "^0.2.1",

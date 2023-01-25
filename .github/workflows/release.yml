@@ -10,21 +10,17 @@ jobs:
     env:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      RELEASE_IT_VERSION: 15.6.0
-      RELEASE_IT_WORKSPACES_VERSION: 3.2.0
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
         with:
           # ポイント1
           fetch-depth: 0
 
       - name: setup node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v2
         with:
           node-version: 16
-
-      - run: npm cache clean --force && npm install
 
       - name: Set releaser settings
         run: |
@@ -35,18 +31,20 @@ jobs:
         # ポイント2
         run: echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > .npmrc
 
+      - run: yarn install --immutable --immutable-cache --check-cache
+
       - name: Major release
         id: major
-        run: npm run release major --ci
+        run: yarn release major --ci
         if: contains(toJSON(github.event.commits.*.message), '🚀 bump up version major')
 
       - name: Minor release
         id: minor
-        run: npm run release minor --ci
+        run: yarn release minor --ci
         if: steps.major.conclusion == 'skipped' && contains(toJSON(github.event.commits.*.message), '🚀 bump up version minor')
 
       - name: Patch release
         # ポイント3
-        run: npm run release patch --ci
+        run: yarn release patch --ci
         # ポイント4
         if: "!(steps.major.conclusion == 'success' || steps.minor.conclusion == 'success')"
