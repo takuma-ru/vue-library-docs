@@ -1,0 +1,38 @@
+name: release npm package
+on:
+  push:
+    branches:
+      - main
+jobs:
+  auto-release:
+    runs-on: ubuntu-latest
+    env:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      RELEASE_IT_VERSION: 15.6.0
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          # ポイント1
+          fetch-depth: 0
+      - uses: actions/setup-node@v2
+      - name: Set releaser settings
+        run: |
+          git config --global user.name github-action(@takuma-ru/vue-library-docs)
+          git config --global user.email github-action@example.com
+      - name: Set .npmrc
+        # ポイント2
+        run: echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > .npmrc
+      - name: Major release
+        id: major
+        run: npx --package release-it@${RELEASE_IT_VERSION} release-it major --ci
+        if: contains(toJSON(github.event.commits.*.message), '🚀 bump up version major')
+      - name: Minor release
+        id: minor
+        run: npx --package release-it@${RELEASE_IT_VERSION} release-it minor --ci
+        if: steps.major.conclusion == 'skipped' && contains(toJSON(github.event.commits.*.message), '🚀 bump up version minor')
+      - name: Patch release
+        # ポイント3
+        run: npx --package release-it@${RELEASE_IT_VERSION} release-it patch --ci
+        # ポイント4
+        if: "!(steps.major.conclusion == 'success' || steps.minor.conclusion == 'success')"
