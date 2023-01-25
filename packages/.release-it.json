@@ -1,7 +1,8 @@
 {
   "npm": {
     "publish": true,
-    "skipChecks": true
+    "skipChecks": true,
+    "publishArgs": "--registry=https://registry.npmjs.org'"
   },
   "git": {
     "requireCleanWorkingDir": false,
