@@ -15,7 +15,7 @@
       @mouseenter="isShowCopyButton = true"
       @mouseleave="isShowCopyButton = false"
     >
-      <span :class="thisId">
+      <span :id="thisId">
         <slot />
       </span>
       <div
@@ -24,15 +24,19 @@
         @click="copy()"
       >
         <Icon
-          icon="content_copy"
-          size="1em"
+          :icon="copyButtonIcon"
+          :color="colorMode.value === 'dark' ? colorStore.color.black.lighten[2] : colorStore.color.theme.text"
+          size="1rem"
         />
+        <p v-text="copyButtonIcon === 'content_copy' ? 'Copy' : 'Done!'" />
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
+import { IconNameType } from '~~/types/icon/iconName';
+
 /* -- type, interface -- */
 interface IProps {
   code?: string
@@ -55,15 +59,23 @@ const colorMode = useColorMode()
 /* -- variable(ref, reactive, computed) -- */
 const isShowCopyButton = ref(false)
 const thisId = ref('')
+const copyButtonIcon = ref<IconNameType>('content_copy')
 
 /* -- function -- */
-const copy = () => {
+const copy = async () => {
   if (navigator.clipboard) {
-    navigator.clipboard.writeText(document.getElementById(thisId.value)!.textContent!);
+    await navigator.clipboard.writeText(document.getElementById(thisId.value)!.textContent!).then(() => {
+      copyButtonIcon.value = 'done'
+    });
   }
 }
 
 /* -- watch -- */
+watch(isShowCopyButton, (newVal) => {
+  if (!newVal) {
+    copyButtonIcon.value = 'content_copy'
+  }
+})
 
 /* -- life cycle -- */
 onMounted(() => {
@@ -118,22 +130,32 @@ onMounted(() => {
   }
 
   .copy-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 0.5rem;
+
     position: absolute;
-    width: auto;
-    height: 2em;
-    right: 1em;
+    height: min-content;
+    padding: 0.5rem 1.25rem;
+    right: 0.5em;
     top: 0.5em;
 
-    text-align: center;
-    border-radius: 0.4em;
+    box-sizing: border-box;
+    border-radius: 0.3em;
     background-color: v-bind("colorMode.value === 'dark' ? colorStore.color.black.darken[2] : colorStore.color.white.darken[2]");
-    aspect-ratio: 1 / 1;
     cursor: pointer;
 
     animation-name: fadeIn;
     animation-duration: 0.25s;
     animation-fill-mode: forwards;
     opacity: 0;
+
+    p {
+      margin: 0px;
+
+      font-size: 0.75rem;
+    }
 
     @keyframes fadeIn{
       from {
@@ -143,15 +165,6 @@ onMounted(() => {
       to {
         opacity: 1;
       }
-    }
-
-    span {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-
-      color: v-bind("colorMode.value === 'dark' ? colorStore.color.black.lighten[2] : colorStore.color.theme.text");
     }
   }
 }
