@@ -105,7 +105,7 @@ html, body {
   ::-webkit-scrollbar-thumb {
     border: 4.5px solid transparent;
     border-radius: 8px;
-    background-color: v-bind("colorMode.value === 'dark' ? colorStore.color.black.lighten[1] : colorStore.color.black.lighten[2]");
+    background-color: v-bind("colorMode.value === 'dark' ? colorStore.color.black.darken[2] : colorStore.color.black.lighten[3]");
     background-clip: content-box;
   }
 }

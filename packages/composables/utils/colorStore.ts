@@ -12,7 +12,7 @@ export const useColorStore = defineStore('color', () => {
       darken: {
         1: '#f6f8fa',
         2: '#E2E7EC',
-        3: '#CBCCDD'
+        3: '#DDDDDD'
       }
     },
     black: {

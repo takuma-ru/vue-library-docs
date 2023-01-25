@@ -88,7 +88,10 @@ export default defineNuxtConfig({
       }
     },
     highlight: {
-      theme: 'dark-plus',
+      theme: {
+        default: 'github-light',
+        'dark-mode': 'dark-plus'
+      },
       preload: ['html', 'css', 'ts', 'js', 'vue','r', 'cmd']
     }
   }

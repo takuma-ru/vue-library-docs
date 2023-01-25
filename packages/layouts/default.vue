@@ -72,7 +72,7 @@ useHead({
     grid-template-columns: auto 1fr;
 
     position: relative;
-    width: min(100vw, 1024px);
+    width: min(100vw, 1280px);
     height: calc(100svh - 64px);
     margin: auto;
 

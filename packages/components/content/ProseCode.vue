@@ -50,6 +50,7 @@ withDefaults(defineProps<IProps>(), {
 
 /* -- store -- */
 const colorStore = useColorStore()
+const colorMode = useColorMode()
 
 /* -- variable(ref, reactive, computed) -- */
 const isShowCopyButton = ref(false)
@@ -78,11 +79,11 @@ onMounted(() => {
 
   padding: 0.5rem 16px;
 
-  color: v-bind('colorStore.color.black.lighten[2]');
+  color: v-bind("colorMode.value === 'dark' ? colorStore.color.black.lighten[2] : colorStore.color.black.darken[1]");
   font-size: 12px;
   font-weight: 500;
   border-radius: 0.5em 0.5em 0em 0em;
-  background-color: v-bind('colorStore.color.black.darken[3]');
+  background-color: v-bind("colorMode.value === 'dark' ? colorStore.color.black.darken[2] : colorStore.color.white.darken[2]");
 
   .directory {
     display: flex;
@@ -125,7 +126,7 @@ onMounted(() => {
 
     text-align: center;
     border-radius: 0.4em;
-    background-color: v-bind('colorStore.color.black.darken[2]');
+    background-color: v-bind("colorMode.value === 'dark' ? colorStore.color.black.darken[2] : colorStore.color.white.darken[2]");
     aspect-ratio: 1 / 1;
     cursor: pointer;
 
@@ -150,7 +151,7 @@ onMounted(() => {
       left: 50%;
       transform: translate(-50%, -50%);
 
-      color: v-bind('colorStore.color.black.lighten[2]');
+      color: v-bind("colorMode.value === 'dark' ? colorStore.color.black.lighten[2] : colorStore.color.theme.text");
     }
   }
 }
@@ -162,7 +163,7 @@ pre {
   margin: 0px;
 
   border-radius: 0em 0em 0.5em 0.5em;
-  background-color: v-bind('colorStore.color.black.default');
+  background-color: v-bind("colorMode.value === 'dark' ? colorStore.color.black.default : colorStore.color.white.default");
   overflow: auto;
 
   &::-webkit-scrollbar {

@@ -97,7 +97,7 @@ useHead({
   flex-flow: column;
 
   position: relative;
-  width: min(100vw, 1024px);
+  width: min(100vw, 1280px);
   max-height: calc(100svh - 64px);
   margin: auto;
 

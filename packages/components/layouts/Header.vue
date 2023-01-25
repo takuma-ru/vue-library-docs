@@ -94,7 +94,7 @@ const switchMode = () => {
   align-items: center;
   justify-content: space-between;
 
-  width: min(calc(100vw), 1024px);
+  width: min(100vw, 1280px);
   height: 64px;
   padding: 1rem;
   margin: auto;

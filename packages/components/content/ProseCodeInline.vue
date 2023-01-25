@@ -21,7 +21,7 @@ const colorStore = useColorStore()
 
 <style lang="scss" scoped>
 code {
-  padding: 0.25rem 0.5rem;
+  padding: 0.1rem 0.5rem;
 
   font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
   font-size: 0.9rem;

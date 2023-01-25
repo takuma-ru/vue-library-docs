@@ -6,7 +6,6 @@
     <p class="sub-text">
       {{ description }}
     </p>
-    <hr>
     <slot />
   </div>
 </template>
@@ -41,8 +40,12 @@ const props = withDefaults(defineProps<IProps>(), {
 
   .title {
     font-size: 2rem;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.1em;
     font-weight: 700;
+  }
+
+  .sub-text {
+    margin-bottom: 3rem;
   }
 }
 </style>

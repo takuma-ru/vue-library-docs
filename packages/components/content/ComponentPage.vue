@@ -7,8 +7,6 @@
       {{ descriptions }}
     </p>
 
-    <hr>
-
     <div class="demo">
       <h2>Demo</h2>
       <div class="demo-contents">
@@ -57,8 +55,13 @@ const props = withDefaults(defineProps<IComponentPageProps>(), {
   margin-bottom: 3rem;
 
   .title {
-    font-size: 1.75em;
+    font-size: 2rem;
+    margin-bottom: 0.1em;
     font-weight: 700;
+  }
+
+  .sub-text {
+    margin-bottom: 3rem;
   }
 
   .demo {
