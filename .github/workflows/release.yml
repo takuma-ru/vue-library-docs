@@ -31,20 +31,18 @@ jobs:
         # ポイント2
         run: echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > .npmrc
 
-      - run: yarn install --immutable --immutable-cache --check-cache
-
       - name: Major release
         id: major
-        run: yarn lib release-it --npm.publishArgs='--registry=https://registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}' major --ci
+        run: npx -w packages release-it@15.6.0 -- major --ci
         if: contains(toJSON(github.event.commits.*.message), '🚀 bump up version major')
 
       - name: Minor release
         id: minor
-        run: yarn lib release-it --npm.publishArgs='--registry=https://registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}' minor --ci
+        run: npx -w packages release-it@15.6.0 -- minor --ci
         if: steps.major.conclusion == 'skipped' && contains(toJSON(github.event.commits.*.message), '🚀 bump up version minor')
 
       - name: Patch release
         # ポイント3
-        run: yarn lib release-it --npm.publishArgs='--registry=https://registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}' patch --ci
+        run: npx -w packages release-it@15.6.0 -- patch --ci
         # ポイント4
         if: "!(steps.major.conclusion == 'success' || steps.minor.conclusion == 'success')"
