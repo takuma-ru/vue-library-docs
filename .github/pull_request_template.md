@@ -6,7 +6,7 @@
     - fix bug: :bug: title
     - add feature: :sparkles: title
     - add or update docs: :memo: title
-    - other(add feature, fix bug): title
+    - other: title
 -->
 
 ## Status
@@ -25,7 +25,7 @@ unknown
 ## 実装内容(Implementation Details)
 <!-- 実装した内容をチェックボックス形式で記述 -->
 <!-- Description of implemented contents in check box format -->
-- [ ] unknown
+- [x] unknown
 
 ## Issues
 <!-- このプルリクエストに関連するIssue番号(#XX) -->
