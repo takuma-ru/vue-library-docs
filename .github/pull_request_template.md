@@ -10,6 +10,8 @@
 -->
 
 ## Status
+<!-- 実装項目に一番近いチェックボックスを選択 -->
+<!-- A brief description of what was implemented in this pull request -->
 - [ ] :bug: Fix bug
 - [ ] :sparkles: Add feature
 - [ ] :rocket: Bump up version
