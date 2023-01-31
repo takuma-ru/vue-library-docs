@@ -24,5 +24,12 @@ export default defineAppConfig<IAppConfig>({
       youtube: '',
       medium: ''
     },
+    navigationListSetting: [
+      {
+        parentPath: '/demo',
+        title: 'Demo',
+        icon: 'slow_motion_video'
+      }
+    ]
   }
 })
