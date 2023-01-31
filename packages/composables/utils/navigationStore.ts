@@ -40,15 +40,28 @@ export const useNavigationStore = defineStore('navigation', () => {
             })
             break;
           default:
-            appConfig.docs.navigationListSetting?.map((additionNavigationItem) => {
+            const isAddList = appConfig.docs.navigationListSetting?.map((additionNavigationItem) => {
               if (navigationItem._path === additionNavigationItem.parentPath) {
                 pathList.push({
                   title: additionNavigationItem.title,
                   icon: additionNavigationItem.icon,
                   children: navigationItem.children
                 })
+
+                return true
+              } else {
+                return false
               }
             })
+
+            if (isAddList && !isAddList?.includes(true)) {
+              pathList.push({
+                title: navigationItem.title,
+                icon: 'adjust',
+                children: navigationItem.children
+              })
+            }
+
             break;
         }
       })
