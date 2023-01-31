@@ -1,0 +1,7 @@
+::page
+---
+title: Playground
+---
+asdasd
+
+::
