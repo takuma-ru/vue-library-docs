@@ -9,9 +9,9 @@
     - other: title
 
   # Merge commmit message
-    - major update: :rocket: bump up version major
-    - minor update: :rocket: bump up version minor
-    - patch update: :rocket: bump up version patch
+    - major update: 🚀 bump up version major
+    - minor update: 🚀 bump up version minor
+    - patch update: 🚀 bump up version patch
     - other: default
 -->
 
@@ -36,4 +36,4 @@ unknown
 ## Issues
 <!-- このプルリクエストに関連するIssue番号(#XX) -->
 <!-- Issue number(#XX) associated with this pull request -->
-#unknown
+- #unknown
