@@ -1,11 +1,13 @@
 <template>
   <div class="getStartedPage">
-    <span class="title">
-      Get Started for {{ version }}
-    </span>
-    <p class="sub-text">
-      {{ description }}
-    </p>
+    <span
+      class="title"
+      v-text="version"
+    />
+    <p
+      class="sub-text"
+      v-text="description"
+    />
     <slot />
   </div>
 </template>

@@ -1,11 +1,13 @@
 <template>
   <div class="componentPage">
-    <span class="title">
-      {{ componentName }}
-    </span>
-    <p class="sub-text">
-      {{ descriptions }}
-    </p>
+    <span
+      class="title"
+      v-text="componentName"
+    />
+    <p
+      class="sub-text"
+      v-text="description"
+    />
 
     <div class="demo">
       <h2>Demo</h2>
@@ -30,7 +32,7 @@
 /* -- type, interface -- */
 export interface IComponentPageProps {
   componentName: string;
-  descriptions: string
+  description: string
 }
 
 /* -- store -- */
