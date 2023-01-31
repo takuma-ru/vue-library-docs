@@ -61,3 +61,6 @@ jobs:
         with:
           title: "Update package.json"
           draft: false
+          base: main
+          branch: release
+          assignees: "${{ github.actor }}"
