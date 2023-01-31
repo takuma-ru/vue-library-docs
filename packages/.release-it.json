@@ -4,6 +4,7 @@
     "skipChecks": true
   },
   "git": {
+    "push": false,
     "requireCleanWorkingDir": false,
     "commitMessage": "[chore(release)] release v${version}"
   },

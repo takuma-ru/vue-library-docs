@@ -7,6 +7,12 @@
     - add feature: :sparkles: title
     - add or update docs: :memo: title
     - other: title
+
+  # Merge commmit message
+    - major update: :rocket: bump up version major
+    - minor update: :rocket: bump up version minor
+    - patch update: :rocket: bump up version patch
+    - other: default
 -->
 
 ## Status
