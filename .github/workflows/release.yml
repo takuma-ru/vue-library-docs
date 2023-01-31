@@ -53,10 +53,11 @@ jobs:
       - name: Patch release
         id: patch
         run: npx -w packages release-it@15.6.0 -- patch --ci
-        if: steps.major.conclusion == 'skipped' && contains(toJSON(github.event.commits.*.message), '🚀 bump up version patch')
+        if: steps.minor.conclusion == 'skipped' && contains(toJSON(github.event.commits.*.message), '🚀 bump up version patch')
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
+        if: contains(toJSON(github.event.commits.*.message), '🚀 bump up version major') || contains(toJSON(github.event.commits.*.message), '🚀 bump up version minor') || contains(toJSON(github.event.commits.*.message), '🚀 bump up version patch')
         with:
           title: "Update package.json"
           draft: false
