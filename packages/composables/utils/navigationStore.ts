@@ -9,6 +9,7 @@ interface IPath {
 
 export const useNavigationStore = defineStore('navigation', () => {
   const { data: navigation } = useAsyncData('navigation', () => fetchContentNavigation())
+  const appConfig = useAppConfig()
 
   /* -- state -- */
   const navigationList = computed(() => {
@@ -39,10 +40,14 @@ export const useNavigationStore = defineStore('navigation', () => {
             })
             break;
           default:
-            pathList.push({
-              title: navigationItem.title,
-              icon: 'adjust',
-              children: navigationItem.children
+            appConfig.docs.navigationListSetting?.map((additionNavigationItem) => {
+              if (navigationItem._path === additionNavigationItem.parentPath) {
+                pathList.push({
+                  title: additionNavigationItem.title,
+                  icon: additionNavigationItem.icon,
+                  children: navigationItem.children
+                })
+              }
             })
             break;
         }
