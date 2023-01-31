@@ -26,8 +26,8 @@ export default defineAppConfig<IAppConfig>({
     },
     navigationListSetting: [
       {
-        parentPath: '/demo',
-        title: 'Demo',
+        parentPath: '/playground',
+        title: 'Playground',
         icon: 'slow_motion_video'
       }
     ]
