@@ -1,11 +1,13 @@
 <template>
   <div class="content-page">
-    <span class="title">
-      {{ title }}
-    </span>
-    <p class="sub-text">
-      {{ description }}
-    </p>
+    <span
+      class="title"
+      v-text="title"
+    />
+    <p
+      class="sub-text"
+      v-text="description"
+    />
     <slot />
   </div>
 </template>

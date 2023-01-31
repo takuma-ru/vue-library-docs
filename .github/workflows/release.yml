@@ -43,5 +43,10 @@ jobs:
         if: steps.major.conclusion == 'skipped' && contains(toJSON(github.event.commits.*.message), '🚀 bump up version minor')
 
       - name: Patch release
+        id: patch
+        run: npx -w packages release-it@15.6.0 -- patch --ci
+        if: steps.major.conclusion == 'skipped' && contains(toJSON(github.event.commits.*.message), '🚀 bump up version patch')
+
+      - name: Patch release (because can't found Message)
         run: npx -w packages release-it@15.6.0 -- patch --ci
         if: "!(steps.major.conclusion == 'success' || steps.minor.conclusion == 'success')"
