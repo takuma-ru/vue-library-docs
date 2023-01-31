@@ -22,5 +22,10 @@ export interface IAppConfig {
       youtube?: string,
       medium?: string
     },
+    navigationListSetting?: Array<{
+      parentPath: string
+      title: string
+      icon: IconNameType
+    }>
   }
 }

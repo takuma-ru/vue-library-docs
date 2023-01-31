@@ -2,7 +2,7 @@
   <div class="getStartedPage">
     <span
       class="title"
-      v-text="version"
+      v-text="`Getting started with ${version}`"
     />
     <p
       class="sub-text"
