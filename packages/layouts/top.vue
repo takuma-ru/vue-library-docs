@@ -18,6 +18,7 @@
         :key="version.version"
       >
         <div
+          v-if="version.isSupport"
           class="chip"
         >
           <img

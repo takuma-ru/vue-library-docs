@@ -114,7 +114,10 @@ html, body {
   height: calc(100svh);
 
   background-color: v-bind("colorStore.color.theme.background");
-  color: v-bind("colorStore.color.theme.text");
+
+  p {
+    color: v-bind("colorStore.color.theme.text");
+  }
 }
 
 .sub-text {
@@ -127,7 +130,7 @@ hr {
   bottom: 0px;
   margin: 1rem 0px;
 
-  background-color: v-bind("colorMode.value === 'dark' ? colorStore.color.black.lighten[1] : colorStore.color.black.lighten[2]");
+  background-color: v-bind("colorMode.value === 'dark' ? colorStore.color.black.darken[1] : colorStore.color.black.lighten[2]");
   border: none;
 }
 </style>
