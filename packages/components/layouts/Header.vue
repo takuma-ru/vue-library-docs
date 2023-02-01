@@ -98,7 +98,7 @@ const switchMode = () => {
   height: 64px;
   padding: 1rem;
   margin: auto;
-  border-bottom: solid 1px v-bind("colorMode.value === 'dark' ? colorStore.color.black.lighten[1] : colorStore.color.black.lighten[2]");
+  border-bottom: solid 1px v-bind("colorMode.value === 'dark' ? colorStore.color.black.darken[1] : colorStore.color.black.lighten[2]");
   box-sizing: border-box;
 
   .right-contents {

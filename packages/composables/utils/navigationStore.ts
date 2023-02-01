@@ -57,7 +57,7 @@ export const useNavigationStore = defineStore('navigation', () => {
             if (isAddList && !isAddList?.includes(true)) {
               pathList.push({
                 title: navigationItem.title,
-                icon: 'adjust',
+                icon: 'label',
                 children: navigationItem.children
               })
             }
