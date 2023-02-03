@@ -1,7 +1,7 @@
 ::componentPage
 ---
 componentName: componentName
-descriptions: descriptions
+description: descriptions
 ---
 #Demo
 ::codeSandbox

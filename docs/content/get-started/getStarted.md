@@ -1,7 +1,7 @@
-::page
+::get-started-page
 ---
-title: 'Get Started with Nuxt3'
-descriptions: 'with NuxtJs'
+version: 'Nuxt3'
+description: 'with NuxtJs'
 ---
-aaa
+`aaa`
 ::
