@@ -55,7 +55,7 @@ const icon = computed<IconNameType>(() => {
       case 'info':
         return 'info'
       case 'warn':
-        return 'error'
+        return 'warning'
     }
   }
 })
