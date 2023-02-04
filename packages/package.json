@@ -45,7 +45,7 @@
     "dev:playground": "yarn prepare && nuxt dev .playground/",
     "build:playground": "nuxt build .playground/",
     "generate:playground": "nuxt generate .playground/",
-    "preview:playground": "nuxt preview .playground/",
+    "preview:playground": "nuxt preview .playground",
     "prepare": "nuxi prepare && nuxi prepare .playground",
     "hygen": "hygen",
     "hygen:component": "hygen generator component",

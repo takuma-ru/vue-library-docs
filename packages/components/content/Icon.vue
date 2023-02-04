@@ -11,7 +11,7 @@ import { IconNameType } from '~/types/icon/iconName'
 export interface IIconProps {
   icon?: IconNameType
   size?: string
-  color?: string
+  color?: string | null
   fill?: boolean
   wght?: number
   grad?: number
