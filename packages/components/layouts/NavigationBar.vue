@@ -30,7 +30,7 @@
           </a>
           <NavigationSubSection
             v-else
-            :path="path"
+            :path="(path as NavItem)"
           />
         </template>
       </div>
@@ -39,6 +39,8 @@
 </template>
 
 <script lang="ts" setup>
+import { NavItem } from '@nuxt/content/dist/runtime/types';
+
 /* -- type, interface -- */
 
 /* -- store -- */

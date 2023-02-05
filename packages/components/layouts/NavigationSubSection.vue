@@ -32,24 +32,17 @@ export interface INavigationSubSectionProps {
   path: NavItem
 }
 
-export interface INavigationSubSectionEmits {
-  (e: 'update:modelValue'): void
-}
-
 /* -- store -- */
 const colorStore = useColorStore()
 const navigationStore = useNavigationStore()
 
 /* -- props, emit -- */
 const props = withDefaults(defineProps<INavigationSubSectionProps>(), {
-  path: undefined
 })
 
-const emit = defineEmits<INavigationSubSectionEmits>()
 
 /* -- variable(ref, reactive, computed) -- */
 const isOpen = ref(false)
-/* const vModel = useVModel(props, 'modelValue', emit) */
 
 /* -- function -- */
 const switchIsOpen = () => {
@@ -59,6 +52,13 @@ const switchIsOpen = () => {
 /* -- watch -- */
 
 /* -- life cycle -- */
+onMounted(() => {
+  const route = useRoute()
+
+  if (route.path.indexOf(props.path._path) > -1) {
+    isOpen.value = true
+  }
+})
 </script>
 
 <style lang="scss" scoped>
@@ -77,8 +77,12 @@ const switchIsOpen = () => {
     padding: 0.5rem 0 0.5rem 0;
 
     color: v-bind("colorStore.color.theme.subText");
-    font-weight: 300;
     cursor: pointer;
+    font-weight: 300;
+
+    /* span {
+      color: v-bind("colorStore.color.theme.subText");
+    } */
   }
 
   a {
