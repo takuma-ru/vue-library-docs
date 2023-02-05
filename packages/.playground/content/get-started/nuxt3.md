@@ -1,47 +1,76 @@
 ::get-started-page
 ---
-version: 'nuxt3'
-description: 'In Vue 2.7 and Vue 3 series, you can easily implement it in the following way!'
+version: 'Nuxt3'
+description: 'with NuxtJs'
 ---
-### 1. Install
+## 1. Create Project
+Create a nuxt3 project by referring to [nuxt.com/installation](https://nuxt.com/docs/getting-started/installation#new-project)
 ```cmd
-yarn add @takuma-ru/vue-swipe-modal@^4.0.0
+npx nuxi init <project-name>
+```
+::
+
+## 2. Add package
+```cmd
+yarn add @takuma-ru/vue-library-docs
 ```
 
-### 2. Add plugin file
-Create a plugins folder and a file named `swipe-modal.ts`.
-
-Write the following code in the file you created.
-
-```ts{1}[@/plugins/swipe-modal.ts]
-import swipeModal from '@takuma-ru/vue-swipe-modal'
-
-export default defineNuxtPlugin((nuxtApp) => {
-  nuxtApp.vueApp.component('swipe-modal', swipeModal)
+## 3. Add `@takuma-ru/vue-library-docs` to extends and use the template.
+```ts{}[nuxt.config.ts]
+defineNuxtConfig({
+  extends: '@takuma-ru/vue-library-docs',
+  vueLibraryDocs: {
+    isUsePlugin: true // Flag whether to use `@takuma-ru/vue-library-docs` templates and components.
+  }
 })
 ```
 
-### 4. Done!
-You can use the `<swipe-modal>` tag in the vue file.
+## 4. Delete app.vue.
+Delete `app.vue` in the folder route.
 
-```vue{}[.vue file]
-<template>
-  <div>
-    <button @click="isModal = true">open</button>
-    <swipe-modal
-      v-model="isModal"
-      contents-height="50vh"
-      border-top-radius="16px"
-    >
-      <p>contents</p>
-    </swipe-modal>
-  </div>
-</template>
+## 5. Create app.config.ts
+Create `app.config.ts` in the folder route.
 
-<script lang="ts" setup>
+This is a file that sets up the basic configuration for this site.
 
-const isModal = ref(false)
-
-</script>
-```
+The following code is a sample Please copy and paste to use.
+::alert
+For type information, please click [here](https://github.com/takuma-ru/vue-library-docs/blob/main/packages/types/app.config.d.ts).
 ::
+```ts{}[app.config.ts]
+import { IAppConfig } from "./types/app.config";
+
+export default defineAppConfig<IAppConfig>({
+  docs: {
+    libName: '',
+    developerName: '',
+    description: '',
+    icon: '',
+    image: '',
+    repository: '',
+    npm: '',
+    supportVersion: {
+      vue2: true,
+      vue2Point7: true,
+      vue3: true,
+      nuxt2: true,
+      nuxt3: true
+    },
+    socialsAccountName: {
+      twitter: 'user-name(No need for "@")',
+      github: '',
+      facebook: '',
+      instagram: '',
+      youtube: '',
+      medium: ''
+    },
+    navigationListSetting: [
+      {
+        parentPath: '/playground',
+        title: 'Playground',
+        icon: 'slow_motion_video'
+      }
+    ]
+  }
+})
+```
