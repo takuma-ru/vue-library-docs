@@ -98,8 +98,8 @@ html, body {
   }
 
   ::-webkit-scrollbar-track {
-      background-color: transparent;
-      border-radius: 2px;
+    background-color: transparent;
+    border-radius: 2px;
   }
 
   ::-webkit-scrollbar-thumb {

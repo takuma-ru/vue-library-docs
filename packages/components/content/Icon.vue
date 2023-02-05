@@ -1,7 +1,7 @@
 <template>
-  <span class="material-symbols-rounded">
+  <i class="material-symbols-rounded notranslate">
     {{ props.icon }}
-  </span>
+  </i>
 </template>
 
 <script lang="ts" setup>
@@ -11,7 +11,7 @@ import { IconNameType } from '~/types/icon/iconName'
 export interface IIconProps {
   icon?: IconNameType
   size?: string
-  color?: string
+  color?: string | null
   fill?: boolean
   wght?: number
   grad?: number
