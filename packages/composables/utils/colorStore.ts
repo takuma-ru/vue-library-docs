@@ -125,7 +125,7 @@ export const useColorStore = defineStore('color', () => {
   const setDarkTheme = () => {
     color.theme = {
       text: color.white.darken[3],
-      subText: color.black.lighten[2],
+      subText: color.black.lighten[1],
       background: color.black.darken[4],
       lighten: {
         1: color.white.lighten[1],

@@ -126,7 +126,7 @@ useHead({
     h2, h3, h4 {
       position: relative;
       padding: 0.25em 0px;
-      margin: 1.25em 0px 0rem 0rem;
+      margin: 1em 0px 0rem 0rem;
       &:hover {
         &::before {
           content: '#';
