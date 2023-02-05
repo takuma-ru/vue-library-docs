@@ -12,7 +12,7 @@
       v-if="isOpenDrawer && displayStatusStore.displaySize === 'sm' && !navigationStore.isCurrentPath('/')"
       class="navigationDrawer"
     >
-      <div
+      <!-- <div
         class="close-button"
         @click="updateIsOpenDrawer(false)"
       >
@@ -20,7 +20,7 @@
           is-icon
           icon="navigate_before"
         />
-      </div>
+      </div> -->
       <div
         v-for="sectionData in navigationStore.navigationList"
         :key="sectionData.title"
@@ -35,14 +35,22 @@
           {{ sectionData.title }}
         </p>
         <div class="paths">
-          <a
+          <template
             v-for="path in sectionData.children"
-            :key="path._path"
-            :class="navigationStore.isCurrentPath(path._path) ? 'selected' : 'unselect'"
-            @click="navigateTo(path._path)"
+            :key="path._id"
           >
-            {{ toSentence(path.title) }}
-          </a>
+            <a
+              v-if="!path.children"
+              :class="navigationStore.isCurrentPath(path._path) ? 'selected' : 'unselect'"
+              @click="navigateTo(path._path)"
+            >
+              {{ toSentence(path.title) }}
+            </a>
+            <NavigationSubSection
+              v-else
+              :path="(path as NavItem)"
+            />
+          </template>
         </div>
       </div>
     </div>
@@ -50,6 +58,8 @@
 </template>
 
 <script lang="ts" setup>
+import { NavItem } from '@nuxt/content/dist/runtime/types'
+
 /* -- type, interface -- */
 
 /* -- store -- */
@@ -84,11 +94,18 @@ const textColor = (path: string) => {
 
   position: relative;
   width: 200px;
+  height: calc(100svh - 64px - 2rem);
   padding: 2rem;
   padding-right: 3rem;
+  padding-bottom: 0rem;
 
   overflow-y: auto;
   -webkit-tap-highlight-color:rgba(0,0,0,0);
+
+  &::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+  }
 
   .close-button {
     display: flex;
@@ -140,19 +157,39 @@ const textColor = (path: string) => {
 
       display: flex;
       flex-flow: column;
+      font-size: 14px;
 
       a {
         display: inline-block;
 
         position: relative;
-        margin: 0 0 0.75rem 0;
+        padding: 0.5rem 0 0.5rem 0;
 
         text-decoration: none;
         cursor: pointer;
 
+        &::after {
+          content: '';
+          position: absolute;
+          width: 2px;
+          height: 80%;
+          left: -0.75rem;
+          top: 50%;
+
+          background-color: v-bind("colorStore.color.blue.default");
+          border-radius: 1px;
+          transform: scale(1, 0) translateY(-50%);
+          transform-origin: right center;
+          transition: transform .3s;
+        }
+
+        &:hover::after {
+          transform: scale(1, 1) translateY(-50%);
+        }
+
         &.selected {
-          color: v-bind("colorStore.color.theme.text");
-          font-weight: 900;
+          color: v-bind("colorStore.color.blue.default");
+          font-weight: 600;
 
           &::after {
             transform: scale(1, 1) translateY(-50%);
@@ -162,21 +199,6 @@ const textColor = (path: string) => {
         &.unselect {
           color: v-bind("colorStore.color.theme.subText");
           font-weight: 400;
-        }
-
-        &::after {
-          content: '';
-          position: absolute;
-          width: 3px;
-          height: 80%;
-          left: -0.75rem;
-          top: 50%;
-
-          background-color: v-bind("colorStore.color.theme.text");
-          border-radius: 1px;
-          transform: scale(1, 0) translateY(-50%);
-          transform-origin: right center;
-          transition: transform .3s;
         }
       }
     }

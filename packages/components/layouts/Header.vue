@@ -128,6 +128,7 @@ const switchMode = () => {
   .buttons {
     display: flex;
     align-items: center;
+    column-gap: 0.25rem;
   }
 }
 </style>

@@ -1,7 +1,7 @@
 import { NavItem } from "@nuxt/content/dist/runtime/types"
 import { IconNameType } from "~~/types/icon/iconName"
 
-interface IPath {
+export interface IPath {
   title: string
   icon: IconNameType
   children?: Array<NavItem>

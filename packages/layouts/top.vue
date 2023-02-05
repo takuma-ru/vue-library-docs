@@ -1,53 +1,57 @@
 <template>
   <main id="index">
-    <h1
-      class="title lib"
-      v-text="appConfigStore.appConfig.libName"
-    />
-    <h1
-      class="title feature"
-      v-text="appConfigStore.appConfig.description"
-    />
-    <h1
-      class="title name"
-      v-text="appConfigStore.appConfig.developerName"
-    />
-    <div class="title support">
-      <template
-        v-for="version in supportVersionList"
-        :key="version.version"
-      >
-        <div
-          v-if="version.isSupport"
-          class="chip"
-        >
-          <img
-            :src="version.imgSrc"
-            alt="brand logo"
+    <ContentDoc>
+      <template #not-found>
+        <h1
+          class="title lib"
+          v-text="appConfigStore.appConfig.libName"
+        />
+        <h1
+          class="title feature"
+          v-text="appConfigStore.appConfig.description"
+        />
+        <h1
+          class="title name"
+          v-text="appConfigStore.appConfig.developerName"
+        />
+        <div class="title support">
+          <template
+            v-for="version in supportVersionList"
+            :key="version.version"
           >
-          <span
-            class="version-name"
-            v-text="version.version"
-          />
+            <div
+              v-if="version.isSupport"
+              class="chip"
+            >
+              <img
+                :src="version.imgSrc"
+                alt="brand logo"
+              >
+              <span
+                class="version-name"
+                v-text="version.version"
+              />
+            </div>
+          </template>
+        </div>
+        <div class="buttons">
+          <BaseButton
+            v-show="navigationStore.isGetStartedPage()"
+            icon="start"
+            :to="navigationStore.navigationList.find(path => path.title === 'Get Started')?.children![0]._path"
+          >
+            Get Started
+          </BaseButton>
+          <BaseButton
+            outlined
+            icon="open_in_new"
+            :to="appConfigStore.appConfig.repository"
+          >
+            View Repository
+          </BaseButton>
         </div>
       </template>
-    </div>
-    <div class="buttons">
-      <BaseButton
-        v-show="navigationStore.isGetStartedPage()"
-        icon="start"
-        :to="navigationStore.navigationList.find(path => path.title === 'Get Started')?.children![0]._path"
-      >
-        Get Started
-      </BaseButton>
-      <BaseButton
-        outlined
-        icon="open_in_new"
-        :to="appConfigStore.appConfig.repository"
-      >
-        View Repository
-      </BaseButton>
-    </div>
+    </ContentDoc>
   </main>
 </template>
 
