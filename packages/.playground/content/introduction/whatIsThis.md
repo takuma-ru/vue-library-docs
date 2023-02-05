@@ -20,4 +20,13 @@ type: warn
 Alert message.
 ::
 
+::base-button
+---
+fit-content: true
+icon: search
+to: '/'
+---
+asd
+::
+
 ::

@@ -63,7 +63,7 @@ const icon = computed<IconNameType>(() => {
 const iconColor = computed(() => {
   switch (props.type) {
       case 'default':
-        return colorMode.value === 'dark' ? colorStore.color.blue.lighten[2] : colorStore.color.blue.darken[2]
+        return colorStore.color.theme.subText
       case 'err':
         return colorMode.value === 'dark' ? colorStore.color.red.lighten[2] : colorStore.color.red.darken[2]
       case 'info':
@@ -85,13 +85,13 @@ const iconColor = computed(() => {
   position: relative;
   max-width: 100%;
   box-sizing: border-box;
-  padding: 1rem 1rem;
+  padding: 0.5rem 1rem;
   margin: 0.5rem 0px 1rem 0px;
 
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
 
   &.default {
-    background-color: v-bind("colorMode.value === 'dark' ? colorStore.color.blue.darken[1] : colorStore.color.blue.default");
+    background-color: v-bind("colorStore.color.theme.complementaryDarken[2]");
   }
 
   &.err {
@@ -108,7 +108,7 @@ const iconColor = computed(() => {
 
   .alert {
     display: grid;
-    grid-template-columns: min-content minmax(0, 1fr) min-content;
+    grid-template-columns: v-bind("isIcon ? 'min-content' : null") minmax(0, 1fr) min-content;
     grid-template-rows: 100%;
     column-gap: 0.75rem;
     align-items: center;

@@ -18,6 +18,7 @@ export interface ICodeSandboxProps {
 
 /* -- store -- */
 const colorMode = useColorMode()
+const colorStore = useColorStore()
 
 /* -- props, emit -- */
 withDefaults(defineProps<ICodeSandboxProps>(), {
@@ -37,6 +38,9 @@ withDefaults(defineProps<ICodeSandboxProps>(), {
   position: relative;
   height: 300px;
   width: 100%;
+
+  background-color: v-bind("colorStore.color.theme.complementaryDarken[2]");
+  border-radius: 0.5rem;
 
   iframe {
     height: calc(100%);
