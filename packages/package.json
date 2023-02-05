@@ -1,7 +1,7 @@
 {
   "name": "@takuma-ru/vue-library-docs",
   "description": "Documentation template for vue library",
-  "version": "1.2.13",
+  "version": "1.2.14",
   "type": "module",
   "main": "./nuxt.config.ts",
   "license": "MIT",
