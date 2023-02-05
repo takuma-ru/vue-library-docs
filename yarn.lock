@@ -904,7 +904,7 @@
 
 "@takuma-ru/vue-library-docs@^1.2.8", "@takuma-ru/vue-library-docs@file:/home/runner/work/vue-library-docs/vue-library-docs/packages":
   "resolved" "file:packages"
-  "version" "1.2.13"
+  "version" "1.2.14"
   dependencies:
     "@nuxt/content" "^2.4.1"
     "@nuxt/kit" "^3.1.1"
@@ -913,6 +913,7 @@
     "@vueuse/core" "^9.11.1"
     "@vueuse/nuxt" "^9.11.1"
     "pinia" "^2.0.29"
+    "remark-emoji" "^3.1.0"
     "sass" "^1.57.1"
 
 "@tootallnate/once@1":
@@ -2436,7 +2437,7 @@
   "resolved" "https://registry.npmjs.org/emoji-regex/-/emoji-regex-9.2.2.tgz"
   "version" "9.2.2"
 
-"emoticon@^4.0.0":
+"emoticon@^4.0.1":
   "integrity" "sha512-dqx7eA9YaqyvYtUhJwT4rC1HIp82j5ybS1/vQ42ur+jBe17dJMwZE4+gvL1XadSFfxaPFFGt3Xsw+Y8akThDlw=="
   "resolved" "https://registry.npmjs.org/emoticon/-/emoticon-4.0.1.tgz"
   "version" "4.0.1"
@@ -4685,11 +4686,12 @@
     "@types/unist" "^2.0.0"
     "unist-util-visit" "^4.0.0"
 
-"mdast-util-find-and-replace@^2.0.0":
-  "integrity" "sha512-SobxkQXFAdd4b5WmEakmkVoh18icjQRxGy5OWTCzgsLRm1Fu/KCtwD1HIQSsmq5ZRjVH0Ehwg6/Fn3xIUk+nKw=="
-  "resolved" "https://registry.npmjs.org/mdast-util-find-and-replace/-/mdast-util-find-and-replace-2.2.1.tgz"
-  "version" "2.2.1"
+"mdast-util-find-and-replace@^2.0.0", "mdast-util-find-and-replace@^2.2.2":
+  "integrity" "sha512-MTtdFRz/eMDHXzeK6W3dO7mXUlF82Gom4y0oOgvHhh/HXZAGvIQDUvQ0SuUx+j2tv44b8xTHOm8K/9OoRFnXKw=="
+  "resolved" "https://registry.npmjs.org/mdast-util-find-and-replace/-/mdast-util-find-and-replace-2.2.2.tgz"
+  "version" "2.2.2"
   dependencies:
+    "@types/mdast" "^3.0.0"
     "escape-string-regexp" "^5.0.0"
     "unist-util-is" "^5.0.0"
     "unist-util-visit-parents" "^5.0.0"
@@ -6526,14 +6528,14 @@
     "wildcard-match" "5.1.2"
     "yargs-parser" "21.1.1"
 
-"remark-emoji@^3.0.2":
-  "integrity" "sha512-hEgxEv2sBtvhT3tNG/tQeeFY3EbslftaOoG14dDZndLo25fWJ6Fbg4ukFbIotOWWrfXyASjXjyHT+6n366k3mg=="
-  "resolved" "https://registry.npmjs.org/remark-emoji/-/remark-emoji-3.0.2.tgz"
-  "version" "3.0.2"
+"remark-emoji@^3.0.2", "remark-emoji@^3.1.0":
+  "integrity" "sha512-KmjkU04niXFMn/H+SsPAGnXhsuq0gT/neIg1KRw8vUKZ/PNxpLDGmwVzx4a14OOd5GJ8rnCdh6DKXqHySkUHAQ=="
+  "resolved" "https://registry.npmjs.org/remark-emoji/-/remark-emoji-3.1.0.tgz"
+  "version" "3.1.0"
   dependencies:
-    "emoticon" "^4.0.0"
+    "emoticon" "^4.0.1"
+    "mdast-util-find-and-replace" "^2.2.2"
     "node-emoji" "^1.11.0"
-    "unist-util-visit" "^4.1.0"
 
 "remark-gfm@^3.0.1":
   "integrity" "sha512-lEFDoi2PICJyNrACFOfDD3JlLkuSbOa5Wd8EPt06HUdptv8Gn0bxYTdbU/XXQ3swAPkEaGxxPN9cbnMHvVu1Ig=="
@@ -7595,7 +7597,7 @@
     "@types/unist" "^2.0.0"
     "unist-util-is" "^5.0.0"
 
-"unist-util-visit@^4.0.0", "unist-util-visit@^4.1.0", "unist-util-visit@^4.1.1", "unist-util-visit@^4.1.2":
+"unist-util-visit@^4.0.0", "unist-util-visit@^4.1.1", "unist-util-visit@^4.1.2":
   "integrity" "sha512-MSd8OUGISqHdVvfY9TPhyK2VdUrPgxkUtWSuMHF6XAAFuL4LokseigBnZtPnJMu+FbynTkFNnFlyjxpVKujMRg=="
   "resolved" "https://registry.npmjs.org/unist-util-visit/-/unist-util-visit-4.1.2.tgz"
   "version" "4.1.2"
