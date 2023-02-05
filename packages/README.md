@@ -45,7 +45,9 @@ yarn add @takuma-ru/vue-library-docs
     ```
 4. Edit `app.config.ts`.
     ```ts
-    export default defineAppConfig({
+    import { IAppConfig } from "./types/app.config";
+
+    export default defineAppConfig<IAppConfig>({
       docs: {
         libName: '',
         developerName: '',
@@ -62,13 +64,20 @@ yarn add @takuma-ru/vue-library-docs
           nuxt3: true
         },
         socialsAccountName: {
-          twitter: '',
+          twitter: 'user-name(No need for "@")',
           github: '',
           facebook: '',
           instagram: '',
           youtube: '',
           medium: ''
         },
+        navigationListSetting: [
+          {
+            parentPath: '/playground',
+            title: 'Playground',
+            icon: 'slow_motion_video'
+          }
+        ]
       }
     })
     ```
