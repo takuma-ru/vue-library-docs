@@ -36,7 +36,7 @@ export default defineNuxtConfig({
           media: 'print',
           onload: 'this.media=\'all\'',
           href: 'https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,200..700,0..1,0&display=swap'
-        },
+        }
       ]
     },
   },
@@ -80,6 +80,11 @@ export default defineNuxtConfig({
   },
 
   content: {
+    markdown: {
+      remarkPlugins: [
+        'remark-emoji'
+      ]
+    },
     sources: {
       md: {
         prefix: '/md',

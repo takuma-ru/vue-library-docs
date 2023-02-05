@@ -27,6 +27,28 @@
               </BaseButton>
             </div>
           </template>
+          <template #empty>
+            <div
+              :style="{
+                width: '100%',
+                height: '100%'
+              }"
+            >
+              <h1>
+                404&#xFF5C;🚧This Page is Not Found.
+              </h1>
+              <hr>
+              <p :style="{ marginBottom: '3rem' }">
+                The page appears to exist, but no content was found. Perhaps it is being edited.
+              </p>
+              <BaseButton
+                icon="undo"
+                to="/"
+              >
+                Back to Top Page
+              </BaseButton>
+            </div>
+          </template>
         </ContentDoc>
       </div>
     </main>
