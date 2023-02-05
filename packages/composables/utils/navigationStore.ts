@@ -1,7 +1,7 @@
 import { NavItem } from "@nuxt/content/dist/runtime/types"
 import { IconNameType } from "~~/types/icon/iconName"
 
-interface IPath {
+export interface IPath {
   title: string
   icon: IconNameType
   children?: Array<NavItem>
@@ -57,7 +57,7 @@ export const useNavigationStore = defineStore('navigation', () => {
             if (isAddList && !isAddList?.includes(true)) {
               pathList.push({
                 title: navigationItem.title,
-                icon: 'adjust',
+                icon: 'label',
                 children: navigationItem.children
               })
             }

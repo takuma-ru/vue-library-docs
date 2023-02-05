@@ -17,24 +17,33 @@
         {{ sectionData.title }}
       </p>
       <div class="paths">
-        <a
+        <template
           v-for="path in sectionData.children"
           :key="path._id"
-          :class="navigationStore.isCurrentPath(path._path) ? 'selected' : 'unselect'"
-          @click="navigateTo(path._path)"
         >
-          {{ toSentence(path.title) }}
-        </a>
+          <a
+            v-if="!path.children"
+            :class="navigationStore.isCurrentPath(path._path) ? 'selected' : 'unselect'"
+            @click="navigateTo(path._path)"
+          >
+            {{ toSentence(path.title) }}
+          </a>
+          <NavigationSubSection
+            v-else
+            :path="(path as NavItem)"
+          />
+        </template>
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
+import { NavItem } from '@nuxt/content/dist/runtime/types';
+
 /* -- type, interface -- */
 
 /* -- store -- */
-const colorMode = useColorMode()
 const colorStore = useColorStore()
 const displayStatusStore = useDisplayStatusStore()
 const navigationStore = useNavigationStore()
@@ -92,39 +101,26 @@ const navigationStore = useNavigationStore()
 
       display: flex;
       flex-flow: column;
+      font-size: 14px;
 
       a {
         display: inline-block;
 
         position: relative;
-        margin: 0 0 0.75rem 0;
+        padding: 0.5rem 0 0.5rem 0;
 
         text-decoration: none;
         cursor: pointer;
 
-        &.selected {
-          color: v-bind("colorStore.color.theme.text");
-          font-weight: 500;
-
-          &::after {
-            transform: scale(1, 1) translateY(-50%);
-          }
-        }
-
-        &.unselect {
-          color: v-bind("colorStore.color.theme.subText");
-          font-weight: 300;
-        }
-
         &::after {
           content: '';
           position: absolute;
-          width: 3px;
+          width: 2px;
           height: 80%;
           left: -0.75rem;
           top: 50%;
 
-          background-color: v-bind("colorStore.color.theme.text");
+          background-color: v-bind("colorStore.color.blue.default");
           border-radius: 1px;
           transform: scale(1, 0) translateY(-50%);
           transform-origin: right center;
@@ -133,6 +129,20 @@ const navigationStore = useNavigationStore()
 
         &:hover::after {
           transform: scale(1, 1) translateY(-50%);
+        }
+
+        &.selected {
+          color: v-bind("colorStore.color.blue.default");
+          font-weight: 600;
+
+          &::after {
+            transform: scale(1, 1) translateY(-50%);
+          }
+        }
+
+        &.unselect {
+          color: v-bind("colorStore.color.theme.subText");
+          font-weight: 400;
         }
       }
     }
