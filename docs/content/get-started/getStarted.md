@@ -34,9 +34,6 @@ Create `app.config.ts` in the folder route.
 This is a file that sets up the basic configuration for this site.
 
 The following code is a sample Please copy and paste to use.
-::alert
-For type information, please click [here](https://github.com/takuma-ru/vue-library-docs/blob/main/packages/types/app.config.d.ts).
-::
 ```ts{}[app.config.ts]
 import { IAppConfig } from "./types/app.config";
 
@@ -74,3 +71,6 @@ export default defineAppConfig<IAppConfig>({
   }
 })
 ```
+::alert
+For type information, please click [here](https://github.com/takuma-ru/vue-library-docs/blob/main/packages/types/app.config.d.ts).
+::
