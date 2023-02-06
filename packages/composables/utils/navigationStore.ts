@@ -77,6 +77,7 @@ export const useNavigationStore = defineStore('navigation', () => {
   }
 
   const isGetStartedPage = (): boolean => {
+    console.log(navigationList.value.findIndex(path => path.title === 'Get Started') > -1 ? true : false)
     return navigationList.value.findIndex(path => path.title === 'Get Started') > -1 ? true : false
   }
 

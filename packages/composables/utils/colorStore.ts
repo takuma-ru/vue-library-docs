@@ -18,7 +18,7 @@ export const useColorStore = defineStore('color', () => {
     black: {
       default: '#030300',
       lighten: {
-        1: '#676764',
+        1: '#727272',
         2: '#9C9C9C',
         3: '#DDDDDD'
       },
