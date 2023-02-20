@@ -5,7 +5,12 @@ description: descriptions
 ---
 #Demo
 ::codeSandbox
+---
+projectId: wild-forest-ziidmd
+---
 ::
+
+![A Cool Image](/socialPreview.png)
 
 #Usage
 
