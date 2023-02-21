@@ -18,7 +18,10 @@
         :wght="500"
         :style="!isIcon && 'margin-right: 0.75rem'"
       />
-      <slot />
+      <ContentSlot
+        :use="$slots.default"
+        unwrap="p"
+      />
     </div>
   </button>
 </template>
