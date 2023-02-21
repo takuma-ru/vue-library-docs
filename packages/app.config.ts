@@ -5,8 +5,8 @@ export default defineAppConfig<IAppConfig>({
     libName: 'lib-name',
     developerName: 'developer-name',
     description: 'A brief description of what you can do with this library.',
-    icon: 'https://user-images.githubusercontent.com/49429291/211703596-2abb6a11-259c-4b0a-8022-438e0ec735c2.png',
-    image: ' https://user-images.githubusercontent.com/49429291/211703637-3daca7d9-6ea0-4e50-893c-e1bbec8abc1c.png',
+    icon: 'https://user-images.githubusercontent.com/49429291/216809173-3317e74d-a6c5-4bb2-ba66-2f2c5baecb75.png',
+    image: 'https://user-images.githubusercontent.com/49429291/216809378-ef4ccd69-643e-450c-b5b6-5f5132827651.png',
     repository: 'https://github.com/takuma-ru/vue-library-docs',
     npm: 'https://www.npmjs.com/package/@takuma-ru/vue-library-docs',
     supportVersion: {

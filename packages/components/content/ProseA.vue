@@ -56,5 +56,9 @@ defineProps({
   span {
     border-bottom: dotted 2px v-bind("colorStore.color.theme.subText");
   }
+
+  .material-symbols-rounded {
+    border: none;
+  }
 }
 </style>

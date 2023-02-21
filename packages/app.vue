@@ -1,10 +1,10 @@
 <template>
+  <NuxtLoadingIndicator />
   <div id="app">
     <Header />
     <NuxtLayout :name="layoutName">
       <NuxtPage />
     </NuxtLayout>
-    <NuxtLoadingIndicator />
   </div>
 </template>
 
@@ -46,14 +46,16 @@ watch(colorMode, () => {
 })
 
 /* -- life cycle -- */
-nuxtApp.hook('page:start', () => {
-  loading.value.start()
-})
+/* nuxtApp.hook('app:created', () => {
+  console.log('app:created')
+  // loading.value.start()
+}) */
 
-nuxtApp.hook('page:finish', () => {
-  loading.value.finish()
+/* nuxtApp.hook('app:rendered', () => {
+  console.log('app:rendered')
+  // loading.value.finish()
   window.scrollTo(0, 0)
-})
+}) */
 
 setColorTheme()
 

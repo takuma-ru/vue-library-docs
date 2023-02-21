@@ -1,7 +1,7 @@
 <template>
-  <i class="material-symbols-rounded notranslate">
+  <span class="material-symbols-rounded notranslate">
     {{ props.icon }}
-  </i>
+  </span>
 </template>
 
 <script lang="ts" setup>
