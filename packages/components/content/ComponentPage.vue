@@ -9,6 +9,8 @@
       v-text="description"
     />
 
+    <slot />
+
     <div class="demo">
       <h2>Demo</h2>
       <div class="demo-contents">
@@ -71,7 +73,7 @@ const props = withDefaults(defineProps<IComponentPageProps>(), {
 
     &-contents {
       border-radius: 0.5rem;
-      border: solid 2px v-bind("colorMode.value === 'dark' ? colorStore.color.black.lighten[1] : colorStore.color.black.lighten[2]");
+      /* border: solid 2px v-bind("colorMode.value === 'dark' ? colorStore.color.black.lighten[1] : colorStore.color.black.lighten[2]"); */
     }
   }
 

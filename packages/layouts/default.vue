@@ -115,14 +115,18 @@ useHead({
       overflow-y: auto;
     }
 
-    h1, h2, h3, h4, p {
+    h1, h2, h3, h4 {
       margin: 0px;
+    }
+
+    p {
+      margin: 0.25rem 0px;
     }
 
     h2, h3, h4 {
       position: relative;
       padding: 0.25em 0px;
-      margin: 1.25em 0px 0rem 0rem;
+      margin: 1em 0px 0rem 0rem;
       &:hover {
         &::before {
           content: '#';
