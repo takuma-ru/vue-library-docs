@@ -23,25 +23,18 @@ Default message + Custom icon.
 #Usage
 
 ```md{}[**.md]
-::alert{type="info"}
-Info message.
-::
-
-::alert{type="warn"}
-Warn message.
-::
-
-::alert{type="err"}
-Error message.
-::
-
-::alert{type="default" customIcon="shopping_cart_checkout"}
+::alert
+---
+type: default
+customIcon: shopping_cart_checkout
+isIcon: true
+---
 Default message + Custom icon.
 ::
 ```
 
 #Props
-| name | des | init value |
+| name | description | default |
 | -- | -- | -- |
 | type | Specify background color and icon theme | `info` |
 | customIcon | Designate your own icons. [Available Icons](https://fonts.google.com/icons) | `undefined` |

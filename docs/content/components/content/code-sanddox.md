@@ -1,17 +1,21 @@
 ::componentPage
 ---
 componentName: CodeSandbox
-description: Used to convey important information to the viewer
+description: Used to illustrate component use cases with CodeSandbox
 ---
 #Demo
+::code-sandbox{projectId="wild-forest-ziidmd"}
+::
 
 #Usage
-
 ```md{}[**.md]
+::code-sandbox{projectId="string" height="string"}
+::
 ```
 
 #Props
-| name | des | init value |
+| name | description | default |
 | -- | -- | -- |
-| type | Specify background color and icon theme | `info` |
+| projectId | Project Id. The `xxx` part of `https://codesandbox.io/s/xxx` | `undefined` |
+| height | Frame size. | `500px` |
 ::

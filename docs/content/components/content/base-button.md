@@ -1,50 +1,71 @@
 ::componentPage
 ---
 componentName: BaseButton
-description: Used to convey important information to the viewer
+description: Used to guide visitors to which page they should view next
 ---
 #Demo
 ::base-button
-Info message.
+default
 ::
 
-::alert{type="warn"}
-Warn message.
+<p></p>
+
+::base-button
+---
+icon: open_in_browser
+---
+text + icon
 ::
 
-::alert{type="err"}
-Error message.
+<p></p>
+
+::base-button
+---
+disabled: true
+icon: open_in_browser
+---
+text + icon (disabled)
 ::
 
-::alert{type="default" customIcon="shopping_cart_checkout"}
-Default message + Custom icon.
+<p></p>
+
+::base-button
+---
+icon: open_in_browser
+isIcon: true
+---
 ::
 
 #Usage
 
 ```md{}[**.md]
-::alert{type="info"}
-Info message.
-::
-
-::alert{type="warn"}
-Warn message.
-::
-
-::alert{type="err"}
-Error message.
-::
-
-::alert{type="default" customIcon="shopping_cart_checkout"}
-Default message + Custom icon.
+::base-button
+---
+disabled: boolean
+icon: IconNameType
+color: 'transparent' | string
+size: 'small' | 'normal' | 'large'
+fab: boolean
+isIcon: boolean
+outlined: boolean
+fitContent: boolean
+to: string
+---
+text
 ::
 ```
 
 #Props
-| name | des | init value |
+| name | description | default |
 | -- | -- | -- |
-| type | Specify background color and icon theme | `info` |
-| customIcon | Designate your own icons. [Available Icons](https://fonts.google.com/icons) | `undefined` |
-| isIcon | Flag whether the icon should be displayed or not | `true` |
+| disabled | Flag to make the button unclickable. | `false` |
+| icon | Designate your own icons. [Available Icons](https://fonts.google.com/icons) | `undefined` |
+| color | Background color (#RRGGBB). | `undefined` |
+| size | There are three sizes: `'small'`, `'normal'`, and `'large'`. | `'normal'` |
+| fab |  Same shape as floating action button. | `false` |
+| isIcon | Flag to make background transparent and show only icons. | `false` |
+| outlined | Flag to make background transparent and show only borders. | `false` |
+| fitContent | The width of the button is `auto` by default. Flag to make it `fit-content`. | `false` |
+| to | Link URL, both in-page and external links can be set. | `undefined` |
 
 ::

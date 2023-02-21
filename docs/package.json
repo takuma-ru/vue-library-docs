@@ -11,7 +11,7 @@
     "prepare": "nuxi prepare"
   },
   "dependencies": {
-    "@takuma-ru/vue-library-docs": "^1.2.15"
+    "@takuma-ru/vue-library-docs": "^1.3.0"
   },
   "devDependencies": {
     "nuxt": "^3.2.2"

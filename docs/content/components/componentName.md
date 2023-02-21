@@ -4,16 +4,15 @@ componentName: componentName
 description: descriptions
 ---
 #Demo
-::codeSandbox
-::
+
 
 #Usage
-
-aa
+```md{}[**.md]
+```
 
 #Props
-| title | des |
-| -- | -- |
-| text | text |
+| name | description | default |
+| -- | -- | -- |
+|  |  | `undefined` |
 
 ::
