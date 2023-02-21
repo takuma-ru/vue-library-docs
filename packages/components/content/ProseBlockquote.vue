@@ -28,6 +28,7 @@ const colorStore = useColorStore()
   padding-left: 10px;
 
   color: v-bind("colorStore.color.theme.subText");
-  border-left: 2px solid v-bind("colorStore.color.theme.complementaryDarken[2]");
+  border-left: 4px solid v-bind("colorStore.color.theme.complementaryDarken[2]");
+  border-radius: 2px;
 }
 </style>

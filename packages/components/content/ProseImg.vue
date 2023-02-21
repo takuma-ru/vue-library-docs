@@ -21,6 +21,7 @@ export interface IProseImgProps {
 
 /* -- props, emit -- */
 const props = withDefaults(defineProps<IProseImgProps>(), {
+  alt: 'image'
 })
 
 /* -- variable(ref, reactive, computed) -- */
@@ -34,7 +35,9 @@ const props = withDefaults(defineProps<IProseImgProps>(), {
 
 <style lang="scss" scoped>
 .content-prose-img {
-  width: 100%;
+  max-width: 100%;
+  margin-top: 1rem;
+
   border-radius: 0.5rem;
 }
 </style>
