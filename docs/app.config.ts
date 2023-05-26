@@ -1,4 +1,4 @@
-import { IAppConfig } from "./types/app.config";
+import { IAppConfig } from '@takuma-ru/vue-library-docs/types/app.config'
 
 export default defineAppConfig<IAppConfig>({
   docs: {

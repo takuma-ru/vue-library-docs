@@ -11,5 +11,9 @@
     "docs": "yarn workspace docs",
     "release": "npm run lib release",
     "release:patch": "npm run lib release:patch"
+  },
+  "volta": {
+    "node": "18.16.0",
+    "yarn": "1.22.19"
   }
 }
